@@ -1,4 +1,5 @@
 import subprocess
+
 address = ""
 addresses = []
 while address != "X":
@@ -8,6 +9,12 @@ while address != "X":
     addresses.append(address)
 
 for address in addresses:
-    subprocess.run(['ping', '-c', '1', address])
+    p = subprocess.run(['ping', '-c', '1', address])
+
+    if p.returncode == 0:
+        print(address + " is up")
+    else:
+        print (address + " is down")
+
 
 
