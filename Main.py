@@ -1,20 +1,19 @@
 import subprocess
 
-address = ""
+from NetworkUptime import NetworkUptime
+
 addresses = []
-while address != "X":
-    address = input("Address (\"X\" to stop): ")
-    if address == "X":
+"""
+print("Input IP/s: (ENTER to finish) ")
+while True:
+    address = input()
+    if address == "":
+        print("Pinging ... \n")
         break
     addresses.append(address)
-
-for address in addresses:
-    p = subprocess.run(['ping', '-c', '1', address])
-
-    if p.returncode == 0:
-        print(address + " is up")
-    else:
-        print (address + " is down")
+"""
+check = NetworkUptime(addresses)
+check.get_default_gateway()
 
 
 
