@@ -1,10 +1,11 @@
 from NetworkInfo import NetworkInfo
-import subprocess
-import socket
 
 ni = NetworkInfo()
-print(ni.get_default_gateway())
-print(ni.get_dns_nameservers())
+ni.ping_global(["8.8.8.8"])
+ni.get_socket()
+ni.get_default_gateway()
+ni.get_dns_nameservers()
+
 
 
 
