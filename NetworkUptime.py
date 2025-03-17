@@ -1,16 +1,12 @@
 import subprocess
 import socket
-import struct
+import ifaddr
 
 
 class NetworkUptime:
-    ip_addresses = []
 
-    def __init__(self, ip_addresses):
-        self.ip_addresses = ip_addresses
-
-    def ping_global(self):
-        for ip in self.ip_addresses:
+    def ping_global(self, addresses):
+        for ip in addresses:
             p = subprocess.run(['ping', '-c', '1', ip])
             if p.returncode == 0:
                 print(f"{ip} is up")
@@ -18,7 +14,17 @@ class NetworkUptime:
                 print(f"{ip} is down")
 
     def get_socket(self):
-        print(socket.gethostbyname(socket.gethostname())) # Gets local IP address
+        return(socket.gethostbyname(socket.gethostname())) # Gets local IP address
+
+    def get_default_gateway(self):
+        adapters = ifaddr.get_adapters()
+        for adapter in adapters:
+            if adapter.nice_name == 'en0':
+                return(adapter.ips[1].ip) #Returns default gateway IP address
+
+
+
+
 
 
 
