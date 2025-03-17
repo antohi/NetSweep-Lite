@@ -1,0 +1,4 @@
+INFO:root:2025-03-16 23:23:33.382710:  Local IP: 127.0.0.1, Gateway: 192.168.1.10, DNS: 192.168.1.1
+
+INFO:root:8.8.8.8 status: UP
+INFO:root:1.1.1.1 status: UP
