@@ -3,7 +3,7 @@ import socket
 import ifaddr
 
 
-class NetworkUptime:
+class NetworkInfo:
 
     def ping_global(self, addresses):
         for ip in addresses:
@@ -21,6 +21,13 @@ class NetworkUptime:
         for adapter in adapters:
             if adapter.nice_name == 'en0':
                 return(adapter.ips[1].ip) #Returns default gateway IP address
+
+    def get_dns_nameservers(self):
+        f = open("/etc/resolv.conf", "r")
+        for line in f:
+            if line.startswith("nameserver"):
+                line = line.split(" ")
+                return(line[1])
 
 
 
