@@ -26,6 +26,7 @@ class NetworkInfo:
     def get_socket(self):
         socket_ip = (socket.gethostbyname(socket.gethostname())) # Gets local IP address
         logging.info(f"\n{datetime.now()}: Socket IP: {socket_ip}")
+        return socket_ip
 
 
     def get_default_gateway(self):
@@ -34,6 +35,7 @@ class NetworkInfo:
             if adapter.nice_name == 'en0':
                 dg = adapter.ips[1].ip # Returns default gateway IP address
                 logging.info(f"\n{datetime.now()}: Default Gateway: {dg}")
+                return dg
 
     def get_dns_nameservers(self):
         with open("/etc/resolv.conf") as f:
@@ -42,6 +44,7 @@ class NetworkInfo:
                     line = line.split(" ")
                     dns = line[1]
                     logging.info(f"\n{datetime.now()}: DNS: {dns}")
+                    return dns
 
 
 
