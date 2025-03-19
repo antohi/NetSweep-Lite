@@ -10,31 +10,35 @@ pt = PingTool()
 inp = None
 
 print("Welcome to NetworkChecker!")
+
+# ssk if the user wants to log network info
 print("\nWould you like to log your Network Info? (Y/N)")
 inp = input().lower().strip()
-if inp.lower() in ["y", "yes"]:
+
+if inp in ["y", "yes"]:
     net_info = f"{datetime.now()}:  Local IP: {ni.get_socket()}, Gateway: {ni.get_default_gateway()}, DNS: {ni.get_dns_nameservers()}"
     print(net_info)
     logging.info(net_info)
-
-elif inp.lower() in ["n", "no"]:
+elif inp in ["n", "no"]:
     print("Skipping logging of Network Info...")
 else:
     print("Invalid input. Please enter 'Y' or 'N'.")
-print("Input IPs to ping, if done ENTER")
-while (inp != ""):
+
+# loop for pinging IP addresses
+add_more = True
+while add_more:
+    print("\nInput IPs to ping, if done ENTER (one per line)")
+
     inp = input()
     if inp == "":
         break
-    pt.add_ip(inp)
+    else:
+        pt.add_ip(inp)
+
+    # check for more IPs
 if not pt.get_addresses():
     print("No IP addresses were entered to ping.")
 else:
+    print("Pinging IP addresses...")
     print(pt.ping_addresses())
-
-
-
-
-
-
 
