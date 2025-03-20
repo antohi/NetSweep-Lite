@@ -1,5 +1,7 @@
 import socket
-import ifaddr
+from ifaddr import netifaces
+import netifaces
+
 
 class NetworkInfo:
     def get_socket(self):
@@ -8,19 +10,18 @@ class NetworkInfo:
 
 
     def get_default_gateway(self):
-        adapters = ifaddr.get_adapters()
-        for adapter in adapters:
-            if adapter.nice_name == 'en0':
-                dg = adapter.ips[1].ip # Returns default gateway IP address
-                return dg
+        gateways = netifaces.gateways()
+        if netifaces.AF_INET in gateways['default']:
+            return gateways['default'][netifaces.AF_INET][0]  # IPv4 Gateway
+        return "N/A"
 
     def get_dns_nameservers(self):
+        dns_servers = []
         with open("/etc/resolv.conf") as f:
             for line in f:
                 if line.startswith("nameserver"):
-                    line = line.split(" ")
-                    dns = line[1]
-                    return dns
+                    dns_servers.append(line.split()[1])
+        return dns_servers if dns_servers else "N/A"
 
 
 

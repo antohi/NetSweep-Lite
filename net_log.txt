@@ -11,3 +11,8 @@ INFO:root:8.8.8. is DOWN
 INFO:root:1.1.1.1 [LATENCY] Minimum: 34.387, Average: 40.569, Maximum: 44.256
 INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
 INFO:root:1.1.1.1 is UP
+INFO:root:2025-03-19 21:06:55.590863:  Local IP: 192.168.12.59, Gateway: ('2607:fb90:6270:82c2:c45:ba0c:98fe:6d22', 0, 0), DNS: 192.168.12.1
+
+INFO:root:2025-03-19 21:08:32.603841:  Local IP: 192.168.12.59, Gateway: ('2607:fb90:6270:82c2:c45:ba0c:98fe:6d22', 0, 0), DNS: 192.168.12.1
+
+INFO:root:2025-03-19 21:15:41.207002:  Local IP: 192.168.12.59, Gateway: 192.168.12.1, DNS: ['192.168.12.1', 'fd00:976a::9', 'fd00:976a::10']
