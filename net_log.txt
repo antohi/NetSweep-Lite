@@ -1,8 +1,13 @@
-INFO:root:2025-03-19 01:12:40.793416:  Local IP: 127.0.0.1, Gateway: 192.168.1.10, DNS: 192.168.1.1
-
-INFO:root:1.1.1.1 [LATENCY] Minimum: 16.682, Average: 24.238, Maximum:31.058
-INFO:root:1.1.1.1: [PACKETS] Transmitted: 4  Received:  4 , Lost:  0.0
-INFO:root:8.8.8.8 [LATENCY] Minimum: 13.973, Average: 22.741, Maximum:30.407
-INFO:root:8.8.8.8: [PACKETS] Transmitted: 4  Received:  4 , Lost:  0.0
+INFO:root:1.1.1.1 [LATENCY] Minimum: 38.455, Average: 43.650, Maximum:50.575
+INFO:root:8.8.8.8 [LATENCY] Minimum: 39.402, Average: 45.202, Maximum:47.825
+INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: <re.Match object; span=(421, 437), match='0.0% packet loss'>
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: <re.Match object; span=(425, 441), match='0.0% packet loss'>
+INFO:root:1.1.1.1 is UP
 INFO:root:8.8.8.8 is UP
+INFO:root:1.1.1.1 [LATENCY] Minimum: 33.717, Average: 41.628, Maximum: 53.662
+INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: <re.Match object; span=(421, 437), match='0.0% packet loss'>%
+INFO:root:1.1.1.1 is UP
+INFO:root:8.8.8. is DOWN
+INFO:root:1.1.1.1 [LATENCY] Minimum: 34.387, Average: 40.569, Maximum: 44.256
+INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
 INFO:root:1.1.1.1 is UP
