@@ -1,7 +1,5 @@
 import socket
-from ifaddr import netifaces
 import netifaces
-
 
 class NetworkInfo:
     def get_socket(self):
