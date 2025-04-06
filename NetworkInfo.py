@@ -1,5 +1,6 @@
 import socket
 import netifaces
+import logging
 
 class NetworkInfo:
     def get_socket(self):
@@ -15,11 +16,20 @@ class NetworkInfo:
 
     def get_dns_nameservers(self):
         dns_servers = []
-        with open("/etc/resolv.conf") as f:
-            for line in f:
-                if line.startswith("nameserver"):
-                    dns_servers.append(line.split()[1])
-        return dns_servers if dns_servers else "N/A"
+        try:
+            with open("/etc/resolv.conf") as f:
+                for line in f:
+                    if line.startswith("nameserver"):
+                        dns_servers.append(line.split()[1])
+                if dns_servers:
+                    logging.info("[SUCCESS] Found DNS servers: " + ", ".join(dns_servers))
+                    return dns_servers
+                else:
+                    logging.warning("[WARNING] No DNS servers found")
+                    return "No DNS servers found"
+        except IOError:
+            logging.error("[EXCEPTION] Could not open /etc/resolv.conf")
+            return "[ERROR] IOError"
 
 
 

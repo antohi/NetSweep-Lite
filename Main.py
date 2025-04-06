@@ -18,7 +18,6 @@ inp = input().lower().strip()
 if inp in ["y", "yes"]:
     net_info = f"{datetime.now()}:  Local IP: {ni.get_socket()}, Gateway: {ni.get_default_gateway()}, DNS: {ni.get_dns_nameservers()}"
     print(net_info)
-    logging.info(net_info)
 elif inp in ["n", "no"]:
     print("Skipping logging of Network Info...")
 else:

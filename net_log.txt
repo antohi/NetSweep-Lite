@@ -1,7 +1,7 @@
-INFO:root:2025-04-05 19:54:58.688574:  Local IP: 127.0.0.1, Gateway: 10.184.176.1, DNS: ['66.253.214.16', '50.30.184.16']
-INFO:root:8.8.8.8 [LATENCY] Minimum: 8.960, Average: 9.498, Maximum: 10.920
+INFO:root:[SUCCESS] Found DNS servers: 66.253.214.16, 50.30.184.16
+INFO:root:8.8.8.8 [LATENCY] Minimum: 8.285, Average: 9.397, Maximum: 12.016
 INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
-INFO:root:1.1.1.1 [LATENCY] Minimum: 26.904, Average: 28.163, Maximum: 30.170
+INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
+INFO:root:1.1.1.1 [LATENCY] Minimum: 27.143, Average: 28.192, Maximum: 30.429
 INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
-INFO:root:8.8.8.8 is UP
-INFO:root:1.1.1.1 is UP
+INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful
