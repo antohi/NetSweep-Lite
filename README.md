@@ -11,7 +11,7 @@ A simple Python network diagnostic program that logs local network information a
 - Modular design with `NetworkInfo` and `PingTool` classes
 
 
-# TUTORIAL:
+# Tutorial
 - Clone repo
 - Install dependencies
 - Run program
