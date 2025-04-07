@@ -5,6 +5,7 @@ import concurrent.futures
 import re
 
 
+
 class PingTool:
     def __init__(self):
         self.addresses = []

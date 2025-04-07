@@ -1,7 +1,12 @@
-INFO:root:[SUCCESS] Found DNS servers: 66.253.214.16, 50.30.184.16
-INFO:root:8.8.8.8 [LATENCY] Minimum: 8.285, Average: 9.397, Maximum: 12.016
+INFO:root:[LOCAL IP] 127.0.0.1
+INFO:root:[GATEWAY] 192.168.0.1
+INFO:root:[DNS SERVERS] 192.168.0.1
+INFO:root:[PLATFORM] macOS-14.6-arm64-arm-64bit
+INFO:root:[CPU] arm64
+INFO:root:[USER] root
+INFO:root:8.8.8.8 [LATENCY] Minimum: 16.456, Average: 17.664, Maximum: 19.269
 INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
 INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
-INFO:root:1.1.1.1 [LATENCY] Minimum: 27.143, Average: 28.192, Maximum: 30.429
+INFO:root:1.1.1.1 [LATENCY] Minimum: 17.106, Average: 18.300, Maximum: 19.807
 INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
 INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful

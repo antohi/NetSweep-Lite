@@ -12,11 +12,12 @@ inp = None
 print("Welcome to NetworkChecker!")
 
 # ssk if the user wants to log network info
-print("\nWould you like to log your Network Info? (Y/N)")
+print("\nWould you like to log your Network/System Info? (Y/N)")
 inp = input().lower().strip()
 
 if inp in ["y", "yes"]:
-    net_info = f"{datetime.now()}:  Local IP: {ni.get_socket()}, Gateway: {ni.get_default_gateway()}, DNS: {ni.get_dns_nameservers()}"
+    net_info = f"{datetime.now()}:  {ni.get_socket()} {ni.get_default_gateway()} {ni.get_dns_nameservers()}"
+    ni.get_sys_info()
     print(net_info)
 elif inp in ["n", "no"]:
     print("Skipping logging of Network Info...")
