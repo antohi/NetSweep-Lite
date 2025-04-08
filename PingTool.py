@@ -3,6 +3,9 @@ import platform
 import logging
 import concurrent.futures
 import re
+from playsound import playsound
+
+
 
 
 
@@ -18,7 +21,7 @@ class PingTool:
     def get_addresses(self):
         return self.addresses
 
-    # Pings a single IP
+    # Pings a single IP, plays sound based on success/failure
     def ping_ip(self, ip):
         try:
             ping_cmd = ['ping', '-n', '4', ip] if platform.system() == 'Windows' else ['ping', '-c', '4', ip]
@@ -26,9 +29,11 @@ class PingTool:
             if p.returncode == 0:
                 self.get_detailed_info(str(p), ip)
                 logging.info(f"[SUCCESS]: Ping to {ip} was successful")
+                playsound('/Assets/ding.mp3')
                 return f"{ip} is UP"
             else:
                 logging.warning(f"[FAIL]: Ping to {ip} was unsuccessful. Return code: {p.returncode}")
+                playsound('/Assets/error.mp3')
                 return f"{ip} is DOWN"
         except Exception as e:
             logging.error(f"[EXCEPTION]: {e}" )

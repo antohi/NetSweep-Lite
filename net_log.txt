@@ -10,3 +10,41 @@ INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
 INFO:root:1.1.1.1 [LATENCY] Minimum: 17.106, Average: 18.300, Maximum: 19.807
 INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
 INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful
+INFO:root:[LOCAL IP] 127.0.0.1
+INFO:root:[GATEWAY] 192.168.0.1
+INFO:root:[DNS SERVERS] 192.168.0.1
+INFO:root:[PLATFORM] macOS-14.6-arm64-arm-64bit
+INFO:root:[CPU] arm64
+INFO:root:[USER] root
+INFO:root:[LOCAL IP] 127.0.0.1
+INFO:root:[GATEWAY] 192.168.0.1
+INFO:root:[DNS SERVERS] 192.168.0.1
+INFO:root:[PLATFORM] macOS-14.6-arm64-arm-64bit
+INFO:root:[CPU] arm64
+INFO:root:[USER] root
+INFO:root:8.8.8.8 [LATENCY] Minimum: 16.651, Average: 50.196, Maximum: 93.507
+INFO:root:1.1.1.1 [LATENCY] Minimum: 18.268, Average: 50.709, Maximum: 93.686
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
+INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful
+INFO:root:[LOCAL IP] 127.0.0.1
+INFO:root:[GATEWAY] 192.168.0.1
+INFO:root:[DNS SERVERS] 192.168.0.1
+INFO:root:[PLATFORM] macOS-14.6-arm64-arm-64bit
+INFO:root:[CPU] arm64
+INFO:root:[USER] root
+WARNING:root:[FAIL]: Ping to jgbnlfksdljkbaldkjf was unsuccessful. Return code: 68
+INFO:root:[LOCAL IP] 127.0.0.1
+INFO:root:[GATEWAY] 192.168.0.1
+INFO:root:[DNS SERVERS] 192.168.0.1
+INFO:root:[PLATFORM] macOS-14.6-arm64-arm-64bit
+INFO:root:[CPU] arm64
+INFO:root:[USER] root
+WARNING:root:[FAIL]: Ping to qagjnrw;lkjanfjkga was unsuccessful. Return code: 68
+INFO:root:1.1.1.1 [LATENCY] Minimum: 13.356, Average: 71.148, Maximum: 238.424
+INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful
+INFO:root:8.8.8.8 [LATENCY] Minimum: 14.547, Average: 72.307, Maximum: 238.059
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
