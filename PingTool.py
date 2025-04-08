@@ -4,6 +4,7 @@ import logging
 import concurrent.futures
 import re
 from playsound import playsound
+import ipaddress
 
 
 
@@ -29,19 +30,17 @@ class PingTool:
             if p.returncode == 0:
                 self.get_detailed_info(str(p), ip)
                 logging.info(f"[SUCCESS]: Ping to {ip} was successful")
-                playsound('/Assets/ding.mp3')
+ #               playsound('/Assets/ding.mp3')
                 return f"{ip} is UP"
             else:
                 logging.warning(f"[FAIL]: Ping to {ip} was unsuccessful. Return code: {p.returncode}")
-                playsound('/Assets/error.mp3')
+ #               playsound('/Assets/error.mp3')
                 return f"{ip} is DOWN"
         except Exception as e:
             logging.error(f"[EXCEPTION]: {e}" )
             return f"[ERROR] {ip} is DOWN"
     #concurrently pings all IP addresses
     def ping_addresses(self):
-        statuses = []  # List to accumulate results
-
         # using ThreadPoolExecutor for parallel pinging
         with concurrent.futures.ThreadPoolExecutor() as executor:
             results = executor.map(self.ping_ip, self.addresses)  # Executes ping_ip for each address in parallel
@@ -50,7 +49,23 @@ class PingTool:
         for result in results:
             print(result)
 
-        return "\n".join(statuses)
+
+    def ping_addresses_in_range(self, start, end):
+        # Converting to IPv4 Objects to easier iteration in for loop
+        range_addresses = []
+        start_ip = ipaddress.IPv4Address(start)
+        end_ip = ipaddress.IPv4Address(end)
+
+        for ip in range(int(start_ip), int(end_ip) + 1):
+            # Converting back to ip addresses when adding to addresses[]
+            range_addresses.append(str(ipaddress.IPv4Address(ip)))
+
+        # Concurrently ping all ips in the range
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            results = executor.map(self.ping_ip, range_addresses)
+
+        for result in results:
+            print(result)
 
     def get_detailed_info(self, p, ip):
         # Latency info

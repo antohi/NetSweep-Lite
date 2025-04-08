@@ -26,15 +26,22 @@ else:
 # loop for pinging IP addresses
 add_more = True
 while add_more:
-    print("\nInput IPs to ping, if done ENTER (one per line)")
+    print("\nInput IPs to ping, if done press ENTER (one per line). To ping IPs in a range, type \"R\"")
 
     inp = input()
     if inp == "":
-        break
+        break  # End the loop
+    elif inp.lower().strip() == "r":
+        print("Please enter the starting IP of your range: ", end="")
+        start_range = input()
+        print("Please enter the ending IP of your range: ", end="")
+        end_range = input()
+        print("Pinging IP addresses...")
+        pt.ping_addresses_in_range(start_range, end_range)
     else:
-        pt.add_ip(inp)
+        pt.add_ip(inp)  # Add IP
 
-    # check for more IPs
+# Check for more IPs
 if not pt.get_addresses():
     print("No IP addresses were entered to ping.")
 else:
