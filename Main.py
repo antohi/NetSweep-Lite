@@ -2,15 +2,20 @@ from NetworkInfo import NetworkInfo
 from PingTool import PingTool
 import logging
 from datetime import datetime
+from PortScanner import PortScanner
 
 logging.basicConfig(filename="net_log.txt", level=logging.INFO)
 
 ni = NetworkInfo()
 pt = PingTool()
+ps = PortScanner()
 inp = None
 
 print("Welcome to NetworkChecker!")
 # ssk if the user wants to log network info
+
+
+
 print("\nWould you like to log your Network/System Info? (Y/N)")
 inp = input().lower().strip()
 
@@ -48,3 +53,13 @@ else:
     print("Pinging IP addresses...")
     print(pt.ping_addresses())
 
+# Scan specific ports for an IP address
+print("\nWould you like to scan a port? (Y/N)")
+inp = input()
+if inp.strip().lower() == "y":
+    print("\nInput the port: ")
+    port = input()
+    print("\nInput the IP address: ")
+    ip = input()
+
+    print(ps.scan_single_port(port, ip))
