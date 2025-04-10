@@ -28,38 +28,48 @@ elif inp in ["n", "no"]:
 else:
     print("Invalid input. Please enter 'Y' or 'N'.")
 
-# loop for pinging IP addresses
-add_more = True
-while add_more:
-    print("\nInput IPs to ping, if done press ENTER (one per line). To ping IPs in a range, type \"R\"")
+exit = False
+while not exit:
+    print("\nPlease enter the number of the feature you'd like to access:"
+          "\n1) IP Ping Tool "
+          "\n2) Port Scanner")
+    choice = input().lower().strip()
+    if choice == "1":
+        # loop for pinging IP addresses
+        add_more = True
+        while add_more:
+            print("\nInput IPs to ping, if done press ENTER (one per line). To ping IPs in a range, type \"R\"")
 
-    inp = input()
-    if inp == "":
-        break  # End the loop
-    elif inp.lower().strip() == "r":
-        print("Please enter the starting IP of your range: ", end="")
-        start_range = input()
-        print("Please enter the ending IP of your range: ", end="")
-        end_range = input()
-        print("Pinging IP addresses...")
-        pt.ping_addresses_in_range(start_range, end_range)
+            inp = input()
+            if inp == "":
+                break  # End the loop
+            elif inp.lower().strip() == "r":
+                print("Please enter the starting IP of your range: ", end="")
+                start_range = input()
+                print("Please enter the ending IP of your range: ", end="")
+                end_range = input()
+                print("Pinging IP addresses...")
+                pt.ping_addresses_in_range(start_range, end_range)
+            else:
+                pt.add_ip(inp)  # Add IP
+
+        # Check for more IPs
+        if not pt.get_addresses():
+            print("No IP addresses were entered to ping.")
+        else:
+            print("Pinging IP addresses...")
+            print(pt.ping_addresses())
+    elif choice == "2":
+        # Scan specific ports for an IP address
+        print("\nInput the port: ")
+        port = input()
+        print("\nInput the IP address: ")
+        ip = input()
+        print(ps.scan_single_port(port, ip))
+    print("\nWould you like to continue? (Y/N)")
+    inp = input().lower().strip()
+    if inp == "y":
+        continue
     else:
-        pt.add_ip(inp)  # Add IP
-
-# Check for more IPs
-if not pt.get_addresses():
-    print("No IP addresses were entered to ping.")
-else:
-    print("Pinging IP addresses...")
-    print(pt.ping_addresses())
-
-# Scan specific ports for an IP address
-print("\nWould you like to scan a port? (Y/N)")
-inp = input()
-if inp.strip().lower() == "y":
-    print("\nInput the port: ")
-    port = input()
-    print("\nInput the IP address: ")
-    ip = input()
-
-    print(ps.scan_single_port(port, ip))
+        exit = True
+        print("\nProgram exited.")

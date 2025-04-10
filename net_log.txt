@@ -13,3 +13,9 @@ INFO:root:1.1.1.1 [LATENCY] Minimum: 14.326, Average: 18.261, Maximum: 24.934
 INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
 INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful
 WARNING:root:[FAIL]: Ping to 2.2.2.2 was unsuccessful. Return code: 2
+INFO:root:8.8.8.8 [LATENCY] Minimum: 17.704, Average: 19.641, Maximum: 22.464
+INFO:root:1.1.1.1 [LATENCY] Minimum: 18.866, Average: 20.855, Maximum: 22.451
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
+INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful
