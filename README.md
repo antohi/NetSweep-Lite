@@ -9,13 +9,19 @@ A simple Python network diagnostic program that logs local network information a
 - Uses concurrent threading to ping multiple IPs simultaneously
 - Error handling for file access and ping related exceptions
 - Modular design with `NetworkInfo` and `PingTool` classes
+- Port Scanning: Scans specific ports on an IP address to check if they are open using Nmap.
 
 
 # Tutorial
-- Clone repo
-- Install dependencies
-- Run program
 
+Clone this repo to your local machine:
+`git clone https://github.com/antohi/NetworkChecker.git`
+
+Install the required Python dependencies:
+`pip install -r requirements.txt`
+
+Run the Program
+`python network_checker.py`
 
 # Future ideas: 
 - Port scanning
