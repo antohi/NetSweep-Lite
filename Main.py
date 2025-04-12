@@ -12,9 +12,7 @@ ps = PortScanner()
 inp = None
 
 print("Welcome to NetworkChecker!")
-# ssk if the user wants to log network info
-
-
+# Ask if the user wants to log network info
 
 print("\nWould you like to log your Network/System Info? (Y/N)")
 inp = input().lower().strip()

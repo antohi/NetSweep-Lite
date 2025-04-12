@@ -6,10 +6,6 @@ import re
 from playsound import playsound
 import ipaddress
 
-
-
-
-
 class PingTool:
     def __init__(self):
         self.addresses = []
@@ -39,6 +35,7 @@ class PingTool:
         except Exception as e:
             logging.error(f"[EXCEPTION]: {e}" )
             return f"[ERROR] {ip} is DOWN"
+
     #concurrently pings all IP addresses
     def ping_addresses(self):
         # using ThreadPoolExecutor for parallel pinging
