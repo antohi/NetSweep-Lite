@@ -24,8 +24,9 @@ Run the Program
 `python network_checker.py`
 
 # Future ideas: 
-- Port scanning
+- Improved Port scanning
 - Traceroute
+- Some bug fixes for UI 
 
 # Terminal Output 
 Here’s what the port scan results look like when running the tool:
