@@ -27,4 +27,14 @@ Run the Program
 - Port scanning
 - Traceroute
 
+# Terminal Output 
+Here’s what the port scan results look like when running the tool:
+
+![Scan Results](Assets/Screenshots/CMLOutput.png)
+![Scan Results](Assets/Screenshots/CMLOutputPorts.png)
+
+
+# Log Output
+
+![Terminal View](Assets/Screenshots/LogOutput.png)
 
