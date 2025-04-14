@@ -37,5 +37,5 @@ Port Status for Single IPs Check
 
 # Net_Log Output
 
-![Terminal View](Assets/Screenshots/LogOutput.png)
+![Terminal View](Assets/Screenshots/Net_LogOutput.png)
 
