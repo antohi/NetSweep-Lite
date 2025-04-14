@@ -26,16 +26,16 @@ Run the Program
 # Future ideas: 
 - Improved Port scanning
 - Traceroute
-- Some bug fixes for UI 
-
+  
 # Terminal Output 
-Here’s what the port scan results look like when running the tool:
+IP Ping Output (Single IPs and Range)
+![Scan Results](Assets/Screenshots/CMLOutputPings.png)
 
-![Scan Results](Assets/Screenshots/CMLOutput.png)
+Port Status for Single IPs Check
 ![Scan Results](Assets/Screenshots/CMLOutputPorts.png)
 
 
-# Log Output
+# Net_Log Output
 
 ![Terminal View](Assets/Screenshots/LogOutput.png)
 
