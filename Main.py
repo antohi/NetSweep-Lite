@@ -10,9 +10,11 @@ ni = NetworkInfo()
 pt = PingTool()
 ps = PortScanner()
 inp = None
+start_range = None
+end_range = None
 
 print("Welcome to NetworkChecker!")
-# Ask if the user wants to log network info
+# ssk if the user wants to log network info
 
 print("\nWould you like to log your Network/System Info? (Y/N)")
 inp = input().lower().strip()
@@ -36,27 +38,26 @@ while not exit:
         # loop for pinging IP addresses
         add_more = True
         while add_more:
-            print("\nInput IPs to ping, if done press ENTER (one per line). To ping IPs in a range, type \"R\"")
+            print("\nInput IPs to ping (one per line), if done press ENTER. To ping IPs in a range, type \"R\"")
 
-            inp = input()
-            if inp == "":
-                break  # End the loop
-            elif inp.lower().strip() == "r":
+            ip_to_ping = input()
+            if ip_to_ping == "":
+                add_more = False  # End the loop
+            elif ip_to_ping.lower().strip() == "r":
                 print("Please enter the starting IP of your range: ", end="")
                 start_range = input()
                 print("Please enter the ending IP of your range: ", end="")
                 end_range = input()
-                print("Pinging IP addresses...")
                 pt.ping_addresses_in_range(start_range, end_range)
             else:
-                pt.add_ip(inp)  # Add IP
+                pt.add_ip(ip_to_ping)  # Add IP
 
         # Check for more IPs
         if not pt.get_addresses():
             print("No IP addresses were entered to ping.")
         else:
             print("Pinging IP addresses...")
-            print(pt.ping_addresses())
+            pt.ping_addresses()
     elif choice == "2":
         # Scan specific ports for an IP address
         print("\nInput the port: ")

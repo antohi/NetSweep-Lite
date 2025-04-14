@@ -8,15 +8,15 @@ import ipaddress
 
 class PingTool:
     def __init__(self):
-        self.addresses = []
-
+        self.addresses_to_ping = set([])
+        self.results = []
     # Add IPs to the list
     def add_ip(self, ip):
-        self.addresses.append(ip)
+        self.addresses_to_ping.add(ip)
 
     #Get addys
     def get_addresses(self):
-        return self.addresses
+        return self.addresses_to_ping
 
     # Pings a single IP, plays sound based on success/failure
     def ping_ip(self, ip):
@@ -27,7 +27,7 @@ class PingTool:
                 self.get_detailed_info(str(p), ip)
                 logging.info(f"[SUCCESS]: Ping to {ip} was successful")
  #               playsound('/Assets/ding.mp3')
-                return f"{ip} is UP"
+                return  f"{ip} is UP"
             else:
                 logging.warning(f"[FAIL]: Ping to {ip} was unsuccessful. Return code: {p.returncode}")
  #               playsound('/Assets/error.mp3')
@@ -40,7 +40,7 @@ class PingTool:
     def ping_addresses(self):
         # using ThreadPoolExecutor for parallel pinging
         with concurrent.futures.ThreadPoolExecutor() as executor:
-            results = executor.map(self.ping_ip, self.addresses)  # Executes ping_ip for each address in parallel
+            results = executor.map(self.ping_ip, self.addresses_to_ping)  # Executes ping_ip for each address in parallel
 
         # printing results to console
         for result in results:
@@ -49,20 +49,12 @@ class PingTool:
 
     def ping_addresses_in_range(self, start, end):
         # Converting to IPv4 Objects to easier iteration in for loop
-        range_addresses = []
         start_ip = ipaddress.IPv4Address(start)
         end_ip = ipaddress.IPv4Address(end)
 
         for ip in range(int(start_ip), int(end_ip) + 1):
             # Converting back to ip addresses when adding to addresses[]
-            range_addresses.append(str(ipaddress.IPv4Address(ip)))
-
-        # Concurrently ping all ips in the range
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            results = executor.map(self.ping_ip, range_addresses)
-
-        for result in results:
-            print(result)
+            self.addresses_to_ping.add((str(ipaddress.IPv4Address(ip))))
 
     def get_detailed_info(self, p, ip):
         # Latency info

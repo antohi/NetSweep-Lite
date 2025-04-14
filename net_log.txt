@@ -1,21 +1,23 @@
 INFO:root:[LOCAL IP] 127.0.0.1
-INFO:root:[GATEWAY] 192.168.1.1
-INFO:root:[DNS SERVERS] 192.168.1.1
+INFO:root:[GATEWAY] 192.168.0.1
+INFO:root:[DNS SERVERS] 192.168.0.1
 INFO:root:[PLATFORM] macOS-14.6-arm64-arm-64bit
 INFO:root:[CPU] arm64
 INFO:root:[USER] root
-INFO:root:8.8.8.8 [LATENCY] Minimum: 15.396, Average: 77.100, Maximum: 140.168
-INFO:root:1.1.1.1 [LATENCY] Minimum: 14.274, Average: 73.910, Maximum: 134.962
+INFO:root:8.8.8.8 [LATENCY] Minimum: 17.202, Average: 27.400, Maximum: 56.276
+INFO:root:1.1.1.1 [LATENCY] Minimum: 15.655, Average: 27.778, Maximum: 56.309
 INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
 INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
 INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
 INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful
-INFO:root:Starting Nmap 7.95 ( https://nmap.org ) at 2025-04-13 11:24 EDT
-Nmap scan report for dns.google (8.8.8.8)
-Host is up (0.021s latency).
+WARNING:root:[FAIL]: Ping to 8.8.8.10 was unsuccessful. Return code: 2
+WARNING:root:[FAIL]: Ping to 8.8.8.9 was unsuccessful. Return code: 2
+INFO:root:Starting Nmap 7.95 ( https://nmap.org ) at 2025-04-13 23:17 EDT
+Nmap scan report for one.one.one.one (1.1.1.1)
+Host is up (0.019s latency).
 
-PORT   STATE    SERVICE
-80/tcp filtered http
+PORT   STATE SERVICE
+80/tcp open  http
 
-Nmap done: 1 IP address (1 host up) scanned in 0.29 seconds
+Nmap done: 1 IP address (1 host up) scanned in 0.08 seconds
 
