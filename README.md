@@ -24,7 +24,7 @@ Run the Program
 `python network_checker.py`
 
 # Future ideas: 
-- Improved Port scanning
+- Scan multiple ports and filter by opened
 - Traceroute
   
 # Terminal Output 
@@ -35,10 +35,12 @@ Port Scan, Displays Status for Single IPs
 ![Scan Results](Assets/Screenshots/cml_port_scan.png)
 
 
-# Net_Log Output For Ping Tool
+# Net_Log Output
+(Net_Log holds program output for future reference and troubleshooting in the form of a txt file)
 
+Net_Log Ping Tool Output:
 ![Terminal View](Assets/Screenshots/Net_Log_Output_Pings.png)
 
-# Net_Log Output for Port Scanner
+Net_Log Output for Port Scanner
 ![Terminal View](Assets/Screenshots/net_log_port_scan.png)
 
