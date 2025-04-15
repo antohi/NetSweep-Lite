@@ -15,7 +15,7 @@ end_range = None
 
 print("Welcome to NetworkChecker!")
 # ssk if the user wants to log network info
-
+logging.info(datetime.now())
 print("\nWould you like to log your Network/System Info? (Y/N)")
 inp = input().lower().strip()
 
@@ -64,6 +64,7 @@ while not exit:
         port = input()
         print("\nInput the IP address: ")
         ip = input()
+        print("\nScanning port...")
         print(ps.scan_single_port(port, ip))
     print("\nWould you like to continue? (Y/N)")
     inp = input().lower().strip()
