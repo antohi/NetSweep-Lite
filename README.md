@@ -1,6 +1,6 @@
 # NetworkChecker
 
-## A Python network diagnostic program that logs local network information and verifies if IP addresses are up or down using console-based ## pings. Recently added port scanning for single ports to check for possible vulnerabilities. Will upgrade this tool to scan for multiple ## ports and find opened ones. Built as a learning project while studying for CompTIA A+ and Network+.
+## A Python network diagnostic program that logs local network information and verifies if IP addresses are up or down using console-based pings. Recently added port scanning for single ports to check for possible vulnerabilities. Will upgrade this tool to scan for multiple ports and find opened ones. Built as a learning project while studying for CompTIA A+ and Network+.
 
 
 # Features
