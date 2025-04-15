@@ -1,2 +1,18 @@
-INFO:root:2025-04-15 11:08:47.289731
-INFO:root:[SUCCESS] 80/tcp Status: filtered
+INFO:root:2025-04-15 12:54:16.761429
+INFO:root:
+
+===SINGLE SCAN RESULTS===
+INFO:root:80/tcp - FILTERED (http)
+INFO:root:
+
+===QUICK SCAN RESULTS===
+INFO:root:21/tcp - FILTERED (ftp)
+INFO:root:22/tcp - FILTERED (ssh)
+INFO:root:23/tcp - FILTERED (telnet)
+INFO:root:25/tcp - FILTERED (smtp)
+INFO:root:80/tcp - OPEN (http)
+INFO:root:110/tcp - FILTERED (pop3)
+INFO:root:139/tcp - FILTERED (netbios-ssn)
+INFO:root:443/tcp - OPEN (https)
+INFO:root:445/tcp - FILTERED (microsoft-ds)
+INFO:root:3389/tcp - FILTERED (ms-wbt-server)

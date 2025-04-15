@@ -58,14 +58,29 @@ while not exit:
         else:
             print("Pinging IP addresses...")
             pt.ping_addresses()
+
     elif choice == "2":
         # Scan specific ports for an IP address
-        print("\nInput the port: ")
-        port = input()
-        print("\nInput the IP address: ")
-        ip = input()
-        print("\nScanning port...")
-        print(ps.scan_single_port(port, ip))
+        print("\n[PORT SCANNER]"
+              "\nPlease enter the number of the feature you'd like to access:"
+              "\n1) Scan Single Port"
+              "\n2) Quick Scan (Top 10 Ports)")
+        choice = input()
+
+        if choice == "1":
+            print("\nInput the port: ")
+            port = input()
+            print("\nInput the IP address: ")
+            ip = input()
+            print("\nScanning port...")
+            ps.scan_single_port(port, ip)
+
+        elif choice == "2":
+            print("\nInput the IP address: ")
+            ip = input()
+            print("Scanning ports...")
+            ps.quick_scan(ip)
+
     print("\nWould you like to continue? (Y/N)")
     inp = input().lower().strip()
     if inp == "y":
