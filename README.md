@@ -31,11 +31,14 @@ Run the Program
 IP Ping Output (Single IPs and Range)
 ![Scan Results](Assets/Screenshots/CMLOutputPings.png)
 
-Port Status for Single IPs Check
-![Scan Results](Assets/Screenshots/CMLOutputPorts.png)
+Port Scan, Displays Status for Single IPs 
+![Scan Results](Assets/Screenshots/cml_port_scan.png)
 
 
-# Net_Log Output
+# Net_Log Output For Ping Tool
 
-![Terminal View](Assets/Screenshots/Net_LogOutput.png)
+![Terminal View](Assets/Screenshots/Net_Log_Output_Pings.png)
+
+# Net_Log Output for Port Scanner
+![Terminal View](Assets/Screenshots/net_log_port_scan.png)
 
