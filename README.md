@@ -22,6 +22,15 @@
 
 ---
 
+## Tech Used
+- **Networking Tool:** Nmap (via subprocess)
+- **Modules:**
+  - `subprocess`, `platform`, `os`, `socket`, `re`, `ipaddress`
+  - `datetime`, `concurrent.futures`, `logging`
+- **Validation:** Custom IP validation using Python’s built-in `ipaddress` module
+- **Multithreading:** Handled with `ThreadPoolExecutor`
+- **CLI Interface:** Interactive UI with menus
+
 # Tutorial
 
 Clone this repo to your local machine:
