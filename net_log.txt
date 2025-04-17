@@ -114,3 +114,33 @@ INFO:root:8888/tcp - FILTERED (sun-answerbook)
 INFO:root:2025-04-16 20:23:49.015307
 INFO:root:2025-04-16 20:23:56.440505
 INFO:root:2025-04-16 20:24:11.143868
+INFO:root:2025-04-16 20:24:59.444312
+INFO:root:2025-04-16 20:25:09.448169
+INFO:root:
+
+===DEEP SCAN RESULTS===
+INFO:root:21/tcp - FILTERED (ftp)
+INFO:root:22/tcp - FILTERED (ssh)
+INFO:root:23/tcp - FILTERED (telnet)
+INFO:root:25/tcp - FILTERED (smtp)
+INFO:root:53/tcp - OPEN (domain)
+INFO:root:80/tcp - FILTERED (http)
+INFO:root:110/tcp - FILTERED (pop3)
+INFO:root:111/tcp - FILTERED (rpcbind)
+INFO:root:135/tcp - FILTERED (msrpc)
+INFO:root:139/tcp - FILTERED (netbios-ssn)
+INFO:root:143/tcp - FILTERED (imap)
+INFO:root:199/tcp - FILTERED (smux)
+INFO:root:443/tcp - OPEN (https)
+INFO:root:445/tcp - FILTERED (microsoft-ds)
+INFO:root:587/tcp - FILTERED (submission)
+INFO:root:993/tcp - FILTERED (imaps)
+INFO:root:995/tcp - FILTERED (pop3s)
+INFO:root:1025/tcp - FILTERED (NFS-or-IIS)
+INFO:root:1720/tcp - FILTERED (h323q931)
+INFO:root:1723/tcp - FILTERED (pptp)
+INFO:root:3306/tcp - FILTERED (mysql)
+INFO:root:3389/tcp - FILTERED (ms-wbt-server)
+INFO:root:5900/tcp - FILTERED (vnc)
+INFO:root:8080/tcp - FILTERED (http-proxy)
+INFO:root:8888/tcp - FILTERED (sun-answerbook)

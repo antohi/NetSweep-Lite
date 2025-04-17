@@ -30,7 +30,7 @@ class PingTool:
                 return  f"{ip} is UP"
             else:
                 logging.warning(f"[FAIL]: Ping to {ip} was unsuccessful. Return code: {p.returncode}")
- #               playsound('/Assets/error.mp3')
+#               playsound('/Assets/error.mp3')
                 return f"{ip} is DOWN"
         except Exception as e:
             logging.error(f"[EXCEPTION]: {e}" )
