@@ -188,3 +188,48 @@ INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
 INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
 INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful
 INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
+INFO:root:2025-04-17 12:31:26.046912
+INFO:root:8.8.8.8 [LATENCY] Minimum: 15.268, Average: 17.066, Maximum: 19.241
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:1.1.1.1 [LATENCY] Minimum: 13.693, Average: 16.416, Maximum: 19.022
+INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
+INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful
+WARNING:root:[FAIL]: Ping to 3.3.3.3 was unsuccessful. Return code: 2
+INFO:root:2025-04-17 12:40:06.035509
+INFO:root:8.8.8.8 [LATENCY] Minimum: 17.684, Average: 19.173, Maximum: 20.471
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
+WARNING:root:[FAIL]: Ping to 8.8.8.9 was unsuccessful. Return code: 2
+WARNING:root:[FAIL]: Ping to 8.8.8.10 was unsuccessful. Return code: 2
+INFO:root:2025-04-17 12:41:12.283154
+INFO:root:8.8.8.8 [LATENCY] Minimum: 19.418, Average: 58.515, Maximum: 91.034
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
+WARNING:root:[FAIL]: Ping to 8.8.8.10 was unsuccessful. Return code: 2
+WARNING:root:[FAIL]: Ping to 8.8.8.9 was unsuccessful. Return code: 2
+INFO:root:2025-04-17 12:42:17.575594
+INFO:root:8.8.8.8 [LATENCY] Minimum: 18.590, Average: 63.660, Maximum: 108.069
+INFO:root:1.1.1.1 [LATENCY] Minimum: 20.080, Average: 65.102, Maximum: 109.377
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
+INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful
+INFO:root:8.8.8.8 [LATENCY] Minimum: 11.476, Average: 42.311, Maximum: 113.795
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
+WARNING:root:[FAIL]: Ping to 8.8.8.10 was unsuccessful. Return code: 2
+WARNING:root:[FAIL]: Ping to 8.8.8.9 was unsuccessful. Return code: 2
+INFO:root:2025-04-17 12:45:35.317569
+INFO:root:2025-04-17 12:46:19.861434
+INFO:root:1.1.1.1 [LATENCY] Minimum: 11.835, Average: 16.801, Maximum: 20.667
+INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:8.8.8.8 [LATENCY] Minimum: 16.013, Average: 19.832, Maximum: 22.603
+INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
+INFO:root:8.8.8.8 [LATENCY] Minimum: 18.413, Average: 20.489, Maximum: 21.801
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
+WARNING:root:[FAIL]: Ping to 8.8.8.9 was unsuccessful. Return code: 2
+WARNING:root:[FAIL]: Ping to 8.8.8.10 was unsuccessful. Return code: 2

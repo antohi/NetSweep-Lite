@@ -38,10 +38,10 @@ class PingTool:
             return f"[ERROR] {ip} is DOWN"
 
     #concurrently pings all IP addresses
-    def ping_addresses(self):
+    def ping_addresses(self, addresses):
         # using ThreadPoolExecutor for parallel pinging
         with concurrent.futures.ThreadPoolExecutor() as executor:
-            results = executor.map(self.ping_ip, self.addresses_to_ping)  # Executes ping_ip for each address in parallel
+            results = executor.map(self.ping_ip, addresses)  # Executes ping_ip for each address in parallel
 
         # printing results to console
         for result in results:
@@ -50,12 +50,14 @@ class PingTool:
 
     def ping_addresses_in_range(self, start, end):
         # Converting to IPv4 Objects to easier iteration in for loop
+        range_addresses = set([])
         start_ip = ipaddress.IPv4Address(start)
         end_ip = ipaddress.IPv4Address(end)
 
         for ip in range(int(start_ip), int(end_ip) + 1):
             # Converting back to ip addresses when adding to addresses[]
-            self.addresses_to_ping.add((str(ipaddress.IPv4Address(ip))))
+            range_addresses.add((str(ipaddress.IPv4Address(ip))))
+        self.ping_addresses(range_addresses)
 
     def get_detailed_info(self, p, ip):
         # Latency info
@@ -72,7 +74,4 @@ class PingTool:
         received = packets_received.group(1) if packets_received else "N/A"
         lost = packets_lost.group(1) if packets_lost else "N/A"
         logging.info(f"{ip}: [PACKETS] Transmitted: {transmitted}, Received: {received}, Lost: {lost}%")
-
-
-
 

@@ -42,10 +42,11 @@ while not exit:
               "\n1) Ping Single/Multiple IPs"
               "\n2) Ping Range of IPs")
         choice = input().lower().strip()
-        if choice == "1":
+        if choice.strip() == "1":
             add_more = True
-            print("\nInput IPs to ping (one per line)."
-                  "\nIf finished, input \"x\".")
+            print("\n--SINGLE/MULTIPLE IP PING TOOL--"
+                  "\nInput IPs to ping (one per line)."
+                  "\nIf finished, input \"x\".\n")
             while add_more:
                 print(f"IP (\"x\" to END): ", end="")
                 ip_to_ping = input()
@@ -56,21 +57,20 @@ while not exit:
                         print("No IP addresses were entered to ping.")
                     else:
                         print("\nPinging IP addresses...\n")
-                        pt.ping_addresses()
-                if InputValidation.validate_ip(ip_to_ping) is False:
+                        pt.ping_addresses(pt.get_addresses())
+                elif InputValidation.validate_ip(ip_to_ping) is False:
                     print("\n[INVALID IP] Invalid IP address! Please enter a valid IP address.\n")
                 else:
                     pt.add_ip(ip_to_ping)  # Add IP
-            """
-            if ip_to_ping.lower().strip() == "r":
-                print("Please enter the starting IP of your range: ", end="")
-                start_range = input()
-                print("Please enter the ending IP of your range: ", end="")
-                end_range = input()
-                pt.ping_addresses_in_range(start_range, end_range)
-                continue
-            """
 
+        if choice.strip() == "2":
+            print("\n--RANGE PING TOOL--"
+                  "\nPlease input the START of the IP range: ", end="")
+            start_range = input()
+            print("\nPlease enter the END of the IP range: ", end="")
+            end_range = input()
+            print("\nPinging IP range...\n")
+            pt.ping_addresses_in_range(start_range, end_range)
     elif choice == "2":
         # Scan specific ports for an IP address
         print("\n[PORT SCANNER]"
