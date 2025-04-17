@@ -3,7 +3,7 @@
 **NetworkChecker** is a Python-based network diagnostics and cybersecurity tool I've been building while studying for my A+ and Net+ exams. It allows users to:
 
 - Ping individual or ranges of IP addresses
-- Perform quick or targeted port scans using Nmap
+- Perform quick, targeted, or deep port scans using Nmap
 - Log detailed system, network, and scan information
 - View and log scan results with clean formatting
 - Leverage concurrency for fast batch scanning
