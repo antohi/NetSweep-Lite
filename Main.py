@@ -65,7 +65,7 @@ while not exit:
               "\nPlease enter the number of the feature you'd like to access:"
               "\n1) Scan Single Port"
               "\n2) Quick Scan (Top 10 Ports)"
-              "\n3) Deep Scan (Top 50 Ports)")
+              "\n3) Deep Scan (Top 25 Ports)")
         choice = input()
         if choice == "1":
             print("\nInput the port: ")
