@@ -26,12 +26,12 @@ if inp in ["y", "yes"]:
 elif inp in ["n", "no"]:
     print("Skipping logging of Network Info...")
 else:
-    print("Invalid input. Please enter 'Y' or 'N'.")
+    print("Invalid input. Please enter 'Y' or 'N'")
 
 exit = False
 while not exit:
     print("\nPlease enter the number of the feature you'd like to access:"
-          "\n1) IP Ping Tool "
+          "\n1) IP Ping Tool"
           "\n2) Port Scanner")
     choice = input().lower().strip()
     if choice == "1":
@@ -39,7 +39,6 @@ while not exit:
         add_more = True
         while add_more:
             print("\nInput IPs to ping (one per line), if done press ENTER. To ping IPs in a range, type \"R\"")
-
             ip_to_ping = input()
             if ip_to_ping == "":
                 add_more = False  # End the loop
@@ -49,6 +48,7 @@ while not exit:
                 print("Please enter the ending IP of your range: ", end="")
                 end_range = input()
                 pt.ping_addresses_in_range(start_range, end_range)
+                continue
             else:
                 pt.add_ip(ip_to_ping)  # Add IP
 
@@ -64,23 +64,26 @@ while not exit:
         print("\n[PORT SCANNER]"
               "\nPlease enter the number of the feature you'd like to access:"
               "\n1) Scan Single Port"
-              "\n2) Quick Scan (Top 10 Ports)")
+              "\n2) Quick Scan (Top 10 Ports)"
+              "\n3) Deep Scan (Top 50 Ports)")
         choice = input()
-
         if choice == "1":
             print("\nInput the port: ")
             port = input()
             print("\nInput the IP address: ")
             ip = input()
-            print("\nScanning port...")
+            print("Scanning port...")
             ps.scan_single_port(port, ip)
-
         elif choice == "2":
             print("\nInput the IP address: ")
             ip = input()
             print("Scanning ports...")
             ps.quick_scan(ip)
-
+        elif choice == "3":
+            print("\nInput the IP address: ")
+            ip = input()
+            print("Scanning ports...")
+            ps.deep_scan(ip)
     print("\nWould you like to continue? (Y/N)")
     inp = input().lower().strip()
     if inp == "y":

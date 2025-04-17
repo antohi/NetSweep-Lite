@@ -21,12 +21,7 @@ class PortScanner:
             logging.info(port)
             print(port)
 
-# Work in progress, functionality for locating opened ones.
-    """
-    def find_open_ports(self, s):
-        format = re.findall("(\d+)/(tcp|udp)\s+open", s)
-        return format
-    """
+
     def quick_scan(self, host):
         scan_cmd = ["nmap", "--top-ports", "10", host]
         s = subprocess.run(scan_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
@@ -34,3 +29,16 @@ class PortScanner:
         print("\n\n===QUICK SCAN RESULTS===")
         return self.format_scan(s.stdout)
 
+    def deep_scan(self, host):
+        scan_cmod = ["nmap", "--top-ports", "25", host]
+        s = subprocess.run(scan_cmod, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        logging.info("\n\n===DEEP SCAN RESULTS===")
+        print("\n\n===DEEP SCAN RESULTS===")
+        return self.format_scan(s.stdout)
+
+# Work in progress, functionality for locating opened ones.
+    """
+    def find_open_ports(self, s):
+        format = re.findall("(\d+)/(tcp|udp)\s+open", s)
+        return format
+    """
