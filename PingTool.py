@@ -10,6 +10,7 @@ class PingTool:
     def __init__(self):
         self.addresses_to_ping = set([])
         self.results = []
+
     # Add IPs to the list
     def add_ip(self, ip):
         self.addresses_to_ping.add(ip)
@@ -18,7 +19,7 @@ class PingTool:
     def get_addresses(self):
         return self.addresses_to_ping
 
-    # Pings a single IP, plays sound based on success/failure
+    #Pings a single IP, plays sound based on success/failure
     def ping_ip(self, ip):
         try:
             ping_cmd = ['ping', '-n', '4', ip] if platform.system() == 'Windows' else ['ping', '-c', '4', ip]

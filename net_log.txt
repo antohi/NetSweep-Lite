@@ -173,3 +173,18 @@ INFO:root:3389/tcp - FILTERED (ms-wbt-server)
 INFO:root:5900/tcp - FILTERED (vnc)
 INFO:root:8080/tcp - FILTERED (http-proxy)
 INFO:root:8888/tcp - FILTERED (sun-answerbook)
+INFO:root:2025-04-17 12:00:49.067729
+INFO:root:2025-04-17 12:03:32.662429
+INFO:root:2025-04-17 12:04:47.888984
+WARNING:root:[FAIL]: Ping to sgfdgs was unsuccessful. Return code: 68
+INFO:root:2025-04-17 12:08:46.064794
+INFO:root:2025-04-17 12:25:45.332767
+INFO:root:2025-04-17 12:26:14.944657
+INFO:root:2025-04-17 12:26:26.922935
+INFO:root:2025-04-17 12:27:47.820758
+INFO:root:1.1.1.1 [LATENCY] Minimum: 20.695, Average: 77.622, Maximum: 126.497
+INFO:root:8.8.8.8 [LATENCY] Minimum: 19.295, Average: 76.897, Maximum: 126.475
+INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful
+INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful

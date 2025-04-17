@@ -10,3 +10,4 @@ class InputValidation:
             return True
         except ValueError:
             return False
+

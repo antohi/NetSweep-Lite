@@ -3,7 +3,7 @@ from PingTool import PingTool
 import logging
 from datetime import datetime
 from PortScanner import PortScanner
-
+from InputValidation import InputValidation
 logging.basicConfig(filename="net_log.txt", level=logging.INFO)
 
 ni = NetworkInfo()
@@ -30,34 +30,46 @@ else:
 
 exit = False
 while not exit:
-    print("\nPlease enter the number of the feature you'd like to access:"
+    print("\n[MENU]"
+          "\nPlease enter the number of the feature you'd like to access:"
           "\n1) IP Ping Tool"
           "\n2) Port Scanner")
     choice = input().lower().strip()
     if choice == "1":
         # loop for pinging IP addresses
-        add_more = True
-        while add_more:
-            print("\nInput IPs to ping (one per line), if done press ENTER. To ping IPs in a range, type \"R\"")
-            ip_to_ping = input()
-            if ip_to_ping == "":
-                add_more = False  # End the loop
-            elif ip_to_ping.lower().strip() == "r":
+        print("\n[IP PING TOOL]"
+              "\nPlease enter the number of the feature you'd like to access:"
+              "\n1) Ping Single/Multiple IPs"
+              "\n2) Ping Range of IPs")
+        choice = input().lower().strip()
+        if choice == "1":
+            add_more = True
+            print("\nInput IPs to ping (one per line)."
+                  "\nIf finished, input \"x\".")
+            while add_more:
+                print(f"IP (\"x\" to END): ", end="")
+                ip_to_ping = input()
+                if ip_to_ping.lower().strip() == "x":
+                    add_more = False  # End the loop
+                    # Check if no IPs inputted
+                    if not pt.get_addresses():
+                        print("No IP addresses were entered to ping.")
+                    else:
+                        print("\nPinging IP addresses...\n")
+                        pt.ping_addresses()
+                if InputValidation.validate_ip(ip_to_ping) is False:
+                    print("\n[INVALID IP] Invalid IP address! Please enter a valid IP address.\n")
+                else:
+                    pt.add_ip(ip_to_ping)  # Add IP
+            """
+            if ip_to_ping.lower().strip() == "r":
                 print("Please enter the starting IP of your range: ", end="")
                 start_range = input()
                 print("Please enter the ending IP of your range: ", end="")
                 end_range = input()
                 pt.ping_addresses_in_range(start_range, end_range)
                 continue
-            else:
-                pt.add_ip(ip_to_ping)  # Add IP
-
-        # Check for more IPs
-        if not pt.get_addresses():
-            print("No IP addresses were entered to ping.")
-        else:
-            print("Pinging IP addresses...")
-            pt.ping_addresses()
+            """
 
     elif choice == "2":
         # Scan specific ports for an IP address
