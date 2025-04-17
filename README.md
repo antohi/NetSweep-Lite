@@ -18,6 +18,7 @@
 - ✅ Threaded Concurrent Scanning
 - ✅ Regex-based Output Formatting
 - ✅ Scan Result Logging (to `net_log.txt`)
+- ✅ IP Validation
 
 ---
 
@@ -33,30 +34,30 @@ Run the Program
 `python network_checker.py`
 
 ---
-# Screenshots
-## Console Output 
 
-IP Ping Output (Single IPs and Range):
-![Scan Results](Assets/Screenshots/CMLOutputPings.png)
+# Screenshots (CML UI Output)
+## Main Menu:
+![Main Menu](Assets/Screenshots/main_menu_cml.png)
 
-Single Port Scans for IP:
-![Scan Results](Assets/Screenshots/cml_singleport.png)
+## Single/Multiple IP Pings:
+![Scan Results](Assets/Screenshots/single_multiple_ping_cml.png)
 
-Quick Scans (Top 10 Ports in IP):
-![Scan Results](Assets/Screenshots/cml_quickscan.png)
+## Range IP Pings:
+![Scan Results](Assets/Screenshots/range_ping_cml.png)
 
-Deep Scan (Top 25 Ports in IP):
-![Scan Results](Assets/Screenshots/deep_scan_cml.png)
+## Quick Port Scan (Top 10 Ports in IP):
+![Scan Results](Assets/Screenshots/quick_port_scan_cml.png)
 
+## Deep Scan (Top 25 Ports in IP):
+![Scan Results](Assets/Screenshots/deep_port_scan_cml.png)
 
+---
 
-## Net_Log Output
-Net_Log holds program output for future reference and troubleshooting in the form of a txt file
-
-Net_Log Ping Tool Output:
+# Screenshots (net_log.txt Output)
+## Ping Tool Output (w/ System and Network Info Logging):
 ![Terminal View](Assets/Screenshots/Net_Log_Output_Pings.png)
 
-Net_Log Output for Port Scanner
+## Output for Port Scanner:
 ![Terminal View](Assets/Screenshots/portscanner_netlog.png)
 
 ---
