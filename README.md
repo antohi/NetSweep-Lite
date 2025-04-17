@@ -37,16 +37,17 @@ Run the Program
 ## Console Output 
 
 IP Ping Output (Single IPs and Range):
-
 ![Scan Results](Assets/Screenshots/CMLOutputPings.png)
 
 Single Port Scans for IP:
-
 ![Scan Results](Assets/Screenshots/cml_singleport.png)
 
 Quick Scans (Top 10 Ports in IP):
-
 ![Scan Results](Assets/Screenshots/cml_quickscan.png)
+
+Deep Scan (Top 25 Ports in IP):
+![Scan Results](Assets/Screenshots/deep_scan_cml.png)
+
 
 
 ## Net_Log Output
