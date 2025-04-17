@@ -13,27 +13,17 @@ inp = None
 start_range = None
 end_range = None
 
-print("Welcome to NetworkChecker!")
-# ssk if the user wants to log network info
+print("\n============================"
+      "\n[Welcome to NetworkChecker!]"
+      "\n============================")
 logging.info(datetime.now())
-print("\nWould you like to log your Network/System Info? (Y/N)")
-inp = input().lower().strip()
-
-if inp in ["y", "yes"]:
-    net_info = f"{datetime.now()}:  {ni.get_socket()} {ni.get_default_gateway()} {ni.get_dns_nameservers()}"
-    ni.get_sys_info()
-    print(net_info)
-elif inp in ["n", "no"]:
-    print("Skipping logging of Network Info...")
-else:
-    print("Invalid input. Please enter 'Y' or 'N'")
-
 exit = False
 while not exit:
     print("\n[MENU]"
           "\nPlease enter the number of the feature you'd like to access:"
           "\n1) IP Ping Tool"
-          "\n2) Port Scanner")
+          "\n2) Port Scanner"
+          "\n3) Log System Information")
     choice = input().lower().strip()
     if choice == "1":
         # loop for pinging IP addresses
@@ -54,7 +44,7 @@ while not exit:
                     add_more = False  # End the loop
                     # Check if no IPs inputted
                     if not pt.get_addresses():
-                        print("No IP addresses were entered to ping.")
+                        print("\nNo IP addresses were entered to ping.")
                     else:
                         print("\nPinging IP addresses...\n")
                         pt.ping_addresses(pt.get_addresses())
@@ -80,26 +70,46 @@ while not exit:
               "\n3) Deep Scan (Top 25 Ports)")
         choice = input()
         if choice == "1":
-            print("\nInput the port: ")
-            port = input()
-            print("\nInput the IP address: ")
+            print("\nInput the IP address: ", end="")
             ip = input()
-            print("Scanning port...")
+            while InputValidation.validate_ip(ip) is False:
+                print("\n[INVALID IP] Invalid IP address! Please enter a valid IP address.\n")
+                print("Input the IP address: ", end="")
+                ip = input()
+            print("\nInput the port: ", end="")
+            port = input()
+            print(f"\nScanning port {port} in IP {ip}...")
             ps.scan_single_port(port, ip)
         elif choice == "2":
-            print("\nInput the IP address: ")
+            print("\n--QUICK SCAN--"
+                  "\nInput the IP address: ", end="")
             ip = input()
-            print("Scanning ports...")
+            while InputValidation.validate_ip(ip) is False:
+                print("\n[INVALID IP] Invalid IP address! Please enter a valid IP address.\n")
+                print("Input the IP address: ", end="")
+                ip = input()
+            print("\nScanning ports...")
             ps.quick_scan(ip)
         elif choice == "3":
-            print("\nInput the IP address: ")
+            print("\n--DEEP SCAN--"
+                  "\nInput the IP address: ", end="")
             ip = input()
-            print("Scanning ports...")
+            while InputValidation.validate_ip(ip) is False:
+                print("\n[INVALID IP] Invalid IP address! Please enter a valid IP address.\n")
+                print("Input the IP address: ", end="")
+                ip = input()
+            print("\nScanning ports...", end="")
             ps.deep_scan(ip)
-    print("\nWould you like to continue? (Y/N)")
+    elif choice == "3":
+        print("\n--SYSTEM INFO LOGGING--")
+        print("\nLogging system information...")
+        net_info = f"{ni.get_socket()} {ni.get_default_gateway()} {ni.get_dns_nameservers()}"
+        ni.get_sys_info()
+        print(net_info)
+    print("\nReturn to Menu? (Y/N)")
     inp = input().lower().strip()
     if inp == "y":
         continue
     else:
         exit = True
-        print("\nProgram exited.")
+        print("\nThank you for using NetworkChecker. Have a great day!")
