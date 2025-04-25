@@ -89,7 +89,8 @@ while not exit:
               "\nPlease enter the number of the feature you'd like to access:"
               "\n1) Scan Single Port"
               "\n2) Quick Scan (Top 10 Ports)"
-              "\n3) Deep Scan (Top 25 Ports)")
+              "\n3) Deep Scan (Top 25 Ports)"
+              "\n4) Banner Scan")
         choice = input()
 
         # Single port scan, one port, one IP
@@ -128,6 +129,18 @@ while not exit:
                 ip = input()
             print("\nScanning ports...", end="")
             ps.deep_scan(ip)
+
+        # Retrieves banner information
+        elif choice == "4":
+            print("\n--SERVICE DETECTION--"
+                  "\nInput the IP address: ", end="")
+            ip = input()
+            while InputValidation.validate_ip(ip) is False: # IP validation
+                print("\n[INVALID IP] Invalid IP address! Please enter a valid IP address.\n")
+                print("Input the IP address: ", end="")
+                ip = input()
+            print("\nDetecting services (this may take a few minutes)...")
+            ps.scan_banners(ip)
 
     # Main Menu choice 3 - Logs system/network information
     elif choice == "3":

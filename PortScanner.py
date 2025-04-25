@@ -37,9 +37,8 @@ class PortScanner:
         print("\n\n===DEEP SCAN RESULTS===")
         return self.format_scan(s.stdout)
 
-    #Work in progress, functionality for locating opened ones.
-    """
-    def find_open_ports(self, s):
-        format = re.findall("(\d+)/(tcp|udp)\s+open", s)
-        return format
-    """
+    # Nmap banners detection
+    def scan_banners(self, host):
+        scan_cmd = ["nmap", "-sV", host]
+        s = subprocess.run(scan_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        return s.stdout

@@ -1,60 +1,13 @@
-INFO:root:2025-04-17 16:58:39.650287
-INFO:root:8.8.8.8 [LATENCY] Minimum: 19.499, Average: 62.593, Maximum: 183.400
-INFO:root:1.1.1.1 [LATENCY] Minimum: 19.546, Average: 62.971, Maximum: 183.768
-INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+
+INFO:root:2025-04-20 13:28:12.466212
+INFO:root:1.1.1.1 [LATENCY] Minimum: 11.161, Average: 17.029, Maximum: 21.279
+INFO:root:8.8.8.8 [LATENCY] Minimum: 11.147, Average: 17.171, Maximum: 20.440
+
 INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
-INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
-INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful
-INFO:root:2025-04-17 17:01:22.408272
-INFO:root:8.8.8.8 [LATENCY] Minimum: 16.063, Average: 58.442, Maximum: 137.155
 INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+
+INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful
 INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
-WARNING:root:[FAIL]: Ping to 8.8.8.10 was unsuccessful. Return code: 2
-WARNING:root:[FAIL]: Ping to 8.8.8.9 was unsuccessful. Return code: 2
-INFO:root:2025-04-17 17:05:25.170592
-INFO:root:
-
-===SINGLE SCAN RESULTS===
-INFO:root:80/tcp - FILTERED (http)
-INFO:root:
-
-===QUICK SCAN RESULTS===
-INFO:root:21/tcp - FILTERED (ftp)
-INFO:root:22/tcp - FILTERED (ssh)
-INFO:root:23/tcp - FILTERED (telnet)
-INFO:root:25/tcp - FILTERED (smtp)
-INFO:root:80/tcp - FILTERED (http)
-INFO:root:110/tcp - FILTERED (pop3)
-INFO:root:139/tcp - FILTERED (netbios-ssn)
-INFO:root:443/tcp - OPEN (https)
-INFO:root:445/tcp - FILTERED (microsoft-ds)
-INFO:root:3389/tcp - FILTERED (ms-wbt-server)
-INFO:root:2025-04-17 17:09:13.065076
-INFO:root:
-
-===DEEP SCAN RESULTS===
-INFO:root:21/tcp - FILTERED (ftp)
-INFO:root:22/tcp - FILTERED (ssh)
-INFO:root:23/tcp - FILTERED (telnet)
-INFO:root:25/tcp - FILTERED (smtp)
-INFO:root:53/tcp - OPEN (domain)
-INFO:root:80/tcp - FILTERED (http)
-INFO:root:110/tcp - FILTERED (pop3)
-INFO:root:111/tcp - FILTERED (rpcbind)
-INFO:root:135/tcp - FILTERED (msrpc)
-INFO:root:139/tcp - FILTERED (netbios-ssn)
-INFO:root:143/tcp - FILTERED (imap)
-INFO:root:199/tcp - FILTERED (smux)
-INFO:root:443/tcp - OPEN (https)
-INFO:root:445/tcp - FILTERED (microsoft-ds)
-INFO:root:587/tcp - FILTERED (submission)
-INFO:root:993/tcp - FILTERED (imaps)
-INFO:root:995/tcp - FILTERED (pop3s)
-INFO:root:1025/tcp - FILTERED (NFS-or-IIS)
-INFO:root:1720/tcp - FILTERED (h323q931)
-INFO:root:1723/tcp - FILTERED (pptp)
-INFO:root:3306/tcp - FILTERED (mysql)
-INFO:root:3389/tcp - FILTERED (ms-wbt-server)
-INFO:root:5900/tcp - FILTERED (vnc)
-INFO:root:8080/tcp - FILTERED (http-proxy)
-INFO:root:8888/tcp - FILTERED (sun-answerbook)
+INFO:root:2025-04-25 17:32:39.714387
+INFO:root:2025-04-25 17:33:02.181977
+INFO:root:2025-04-25 17:55:28.805334
