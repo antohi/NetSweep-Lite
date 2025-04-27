@@ -17,3 +17,6 @@ INFO:root:2025-04-27 11:25:00.943525
 INFO:root:2025-04-27 11:34:41.460544
 INFO:root:2025-04-27 11:35:33.425891
 INFO:root:53/tcp - OPEN (domain Version:    dnsmasq 2.83)
+INFO:root:2025-04-27 12:43:44.002719
+INFO:root:Port: 53/tcp, State: open, Service: domain, Version: dnsmasq 2.83
+INFO:root:Port: 443/tcp, State: open, Service: ssl/https, Version: HTTP server (unknown)
