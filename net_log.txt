@@ -1,27 +1,4 @@
 
-INFO:root:2025-04-20 13:28:12.466212
-INFO:root:1.1.1.1 [LATENCY] Minimum: 11.161, Average: 17.029, Maximum: 21.279
-INFO:root:8.8.8.8 [LATENCY] Minimum: 11.147, Average: 17.171, Maximum: 20.440
-
-INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
-INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
-
-INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful
-INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
-INFO:root:2025-04-25 17:32:39.714387
-INFO:root:2025-04-25 17:33:02.181977
-INFO:root:2025-04-25 17:55:28.805334
-INFO:root:2025-04-27 11:20:40.836308
-INFO:root:2025-04-27 11:23:31.077282
-INFO:root:2025-04-27 11:25:00.943525
-INFO:root:2025-04-27 11:34:41.460544
-INFO:root:2025-04-27 11:35:33.425891
-INFO:root:53/tcp - OPEN (domain Version:    dnsmasq 2.83)
-INFO:root:2025-04-27 12:43:44.002719
-INFO:root:Port: 53/tcp, State: open, Service: domain, Version: dnsmasq 2.83
-INFO:root:Port: 443/tcp, State: open, Service: ssl/https, Version: HTTP server (unknown)
-INFO:root:2025-04-27 12:47:59.289086
-INFO:root:
 
 ===QUICK SCAN RESULTS===
 INFO:root:21/tcp - FILTERED (ftp)
@@ -34,8 +11,11 @@ INFO:root:139/tcp - FILTERED (netbios-ssn)
 INFO:root:443/tcp - OPEN (https)
 INFO:root:445/tcp - FILTERED (microsoft-ds)
 INFO:root:3389/tcp - FILTERED (ms-wbt-server)
+INFO:root:
+
+===BANNER SCAN RESULTS===
 INFO:root:Port: 53/tcp, State: open, Service: domain, Version: dnsmasq 2.83
-INFO:root:Port: 443/tcp, State: open, Service: ssl/https, Version: HTTP server (unknown)
-INFO:root:2025-04-27 12:50:58.581993
-INFO:root:2025-04-27 12:51:26.391225
-INFO:root:2025-04-27 12:51:33.129287
+INFO:root:Port: 80/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:Port: 8080/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 8443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
