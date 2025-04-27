@@ -14,19 +14,15 @@ class PortScanner:
     # Formats output of scan to make more readable when printing/logging
     def format_port_scan(self, s):
         ports = re.findall(r"(\d+)/(tcp|udp)\s+(open|closed|filtered)\s+(\S+)", s)
-        formatted = []
         for port, protocol, state, service in ports:
-            formatted.append(f"{port}/{protocol} - {state.upper()} ({service})")
-        for port in formatted:
+            port = f"{port}/{protocol} - {state.upper()} ({service})"
             logging.info(port)
             print(port)
 
     def format_banner_scan(self, s):
         banners = re.findall(r"(\d+)/(tcp|udp)\s+(\w+)\s+([\S]+)\s*(.*)", s)
-        formatted = []
         for  port, protocol, state, service, version_info in banners:
-            formatted.append(f"Port: {port}/{protocol}, State: {state}, Service: {service}, Version: {version_info}")
-        for banner in formatted:
+            banner = f"Port: {port}/{protocol}, State: {state}, Service: {service}, Version: {version_info}"
             logging.info(banner)
             print(banner)
     # Scans top 10 ports using nmap's --top-ports functionality
