@@ -22,14 +22,13 @@ class PortScanner:
             print(port)
 
     def format_banner_scan(self, s):
-        banners = re.findall(r"(\d+)/(tcp|udp)\s+(open|closed|filtered)\s+(\w+)(.+)", s)
+        banners = re.findall(r"(\d+)/(tcp|udp)\s+(\w+)\s+([\S]+)\s*(.*)", s)
         formatted = []
-        for port, protocol, state, service, version in banners:
-            formatted.append(f"{port}/{protocol} - {state.upper()} ({service} | Version: {version})")
+        for  port, protocol, state, service, version_info in banners:
+            formatted.append(f"Port: {port}/{protocol}, State: {state}, Service: {service}, Version: {version_info}")
         for banner in formatted:
             logging.info(banner)
             print(banner)
-
     # Scans top 10 ports using nmap's --top-ports functionality
     def quick_scan(self, host):
         scan_cmd = ["nmap", "--top-ports", "10", host]
