@@ -37,7 +37,8 @@ while not exit:
         print("\n[IP PING TOOL]"
               "\nPlease enter the number of the feature you'd like to access:"
               "\n1) Ping Single/Multiple IPs"
-              "\n2) Ping Range of IPs")
+              "\n2) Ping Range of IPs"
+              "\n>", end=" ")
         choice = input().lower().strip()
         # Choice 1 of Ping Tool
         if choice.strip() == "1":
@@ -90,7 +91,8 @@ while not exit:
               "\n1) Scan Single Port"
               "\n2) Quick Scan (Top 10 Ports)"
               "\n3) Deep Scan (Top 25 Ports)"
-              "\n4) Banner Scan")
+              "\n4) Service Detection"
+              "\n>", end=" ")
         choice = input()
 
         # Single port scan, one port, one IP
