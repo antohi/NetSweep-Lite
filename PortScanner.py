@@ -25,6 +25,7 @@ class PortScanner:
             banner = f"Port: {port}/{protocol}, State: {state}, Service: {service}, Version: {version_info}"
             logging.info(banner)
             print(banner)
+
     # Scans top 10 ports using nmap's --top-ports functionality
     def quick_scan(self, host):
         scan_cmd = ["nmap", "--top-ports", "10", host]
@@ -46,4 +47,5 @@ class PortScanner:
         scan_cmd = ["nmap", "-sV", host]
         s = subprocess.run(scan_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         print("\n\n===BANNER SCAN RESULTS===")
+        logging.info("\n\n===BANNER SCAN RESULTS===")
         return self.format_banner_scan(s.stdout)
