@@ -40,6 +40,7 @@ class PingTool:
     #concurrently pings all IP addresses
     def ping_addresses(self, addresses):
         # using ThreadPoolExecutor for parallel pinging
+        logging.info(f"===IP PING INFO===")
         with concurrent.futures.ThreadPoolExecutor() as executor:
             results = executor.map(self.ping_ip, addresses)  # Executes ping_ip for each address in parallel
 
@@ -49,6 +50,7 @@ class PingTool:
 
 
     def ping_addresses_in_range(self, start, end):
+        logging.info(f"===RANGE PING INFO===")
         # Converting to IPv4 Objects to easier iteration in for loop
         range_addresses = set([])
         start_ip = ipaddress.IPv4Address(start)
@@ -61,6 +63,7 @@ class PingTool:
 
     def get_detailed_info(self, p, ip):
         # Latency info
+        logging.info(f"=LATENCY, PACKET LOSS, PING STATUS INFO=")
         latency_info = re.search(r"(\d+\.\d+)/(\d+\.\d+)/(\d+\.\d+)", p)
         min, avg, max = latency_info.groups()
         logging.info(f"{ip} [LATENCY] Minimum: {min}, Average: {avg}, Maximum: {max}")

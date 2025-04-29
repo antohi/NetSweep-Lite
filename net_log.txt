@@ -1,21 +1,18 @@
-
-
-===QUICK SCAN RESULTS===
-INFO:root:21/tcp - FILTERED (ftp)
-INFO:root:22/tcp - FILTERED (ssh)
-INFO:root:23/tcp - FILTERED (telnet)
-INFO:root:25/tcp - FILTERED (smtp)
-INFO:root:80/tcp - OPEN (http)
-INFO:root:110/tcp - FILTERED (pop3)
-INFO:root:139/tcp - FILTERED (netbios-ssn)
-INFO:root:443/tcp - OPEN (https)
-INFO:root:445/tcp - FILTERED (microsoft-ds)
-INFO:root:3389/tcp - FILTERED (ms-wbt-server)
-INFO:root:
-
-===BANNER SCAN RESULTS===
-INFO:root:Port: 53/tcp, State: open, Service: domain, Version: dnsmasq 2.83
-INFO:root:Port: 80/tcp, State: open, Service: http, Version: Cloudflare http proxy
-INFO:root:Port: 443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
-INFO:root:Port: 8080/tcp, State: open, Service: http, Version: Cloudflare http proxy
-INFO:root:Port: 8443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:2025-04-29 01:38:10.246061
+INFO:root:===IP PING INFO===
+INFO:root:=LATENCY & PACKET LOSS INFO=
+INFO:root:8.8.8.8 [LATENCY] Minimum: 13.541, Average: 15.162, Maximum: 17.636
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:=LATENCY & PACKET LOSS INFO=
+INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
+INFO:root:1.1.1.1 [LATENCY] Minimum: 11.905, Average: 14.198, Maximum: 17.653
+INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful
+INFO:root:===RANGE PING INFO===
+INFO:root:===IP PING INFO===
+INFO:root:=LATENCY & PACKET LOSS INFO=
+INFO:root:8.8.8.8 [LATENCY] Minimum: 15.693, Average: 17.625, Maximum: 19.154
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
+WARNING:root:[FAIL]: Ping to 8.8.8.10 was unsuccessful. Return code: 2
+WARNING:root:[FAIL]: Ping to 8.8.8.9 was unsuccessful. Return code: 2
