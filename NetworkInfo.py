@@ -36,6 +36,7 @@ class NetworkInfo:
             return "[ERROR] IOError"
 
     def get_sys_info(self):
+        logging.info("\n===SYSTEM/NETWORK INFO===")
         logging.info(f"[PLATFORM] {platform.platform()}")
         logging.info(f"[CPU] {platform.machine()}")
         logging.info(f"[USER] {os.getlogin()}")

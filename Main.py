@@ -134,7 +134,7 @@ while not exit:
 
         # Retrieves banner information
         elif choice == "4":
-            print("\n--SERVICE DETECTION--"
+            print("\n--SERVICE SCAN--"
                   "\nInput the IP address: ", end="")
             ip = input()
             while InputValidation.validate_ip(ip) is False: # IP validation
