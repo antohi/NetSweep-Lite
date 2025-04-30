@@ -3,6 +3,8 @@ import subprocess
 import logging
 
 class PortScanner:
+    def __init__(self):
+        self.scanned_services_db = {}
     # Scan a single port based on an IP address
     def scan_single_port(self, port, host):
         scan_cmd = ["nmap", "-p", port, host]
@@ -23,6 +25,7 @@ class PortScanner:
         banners = re.findall(r"(\d+)/(tcp|udp)\s+(\w+)\s+([\S]+)\s*(.*)", s)
         for  port, protocol, state, service, version_info in banners:
             banner = f"Port: {port}/{protocol}, State: {state}, Service: {service}, Version: {version_info}"
+            self.scanned_services_db[service] = version_info
             logging.info(banner)
             print(banner)
 
@@ -49,3 +52,5 @@ class PortScanner:
         print("\n\n===SERVICE SCAN RESULTS===")
         logging.info("\n\n===SERVICE SCAN RESULTS===")
         return self.format_banner_scan(s.stdout)
+
+
