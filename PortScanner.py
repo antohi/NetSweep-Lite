@@ -1,17 +1,21 @@
 import re
 import subprocess
 import logging
+import requests
+from dotenv import load_dotenv
+import os
 
 class PortScanner:
     def __init__(self):
         self.scanned_services_db = {}
+        self.risk_db = {}
     # Scan a single port based on an IP address
     def scan_single_port(self, port, host):
         scan_cmd = ["nmap", "-p", port, host]
         s = subprocess.run(scan_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         logging.info("\n\n===SINGLE SCAN RESULTS===")
         print("\n\n===SINGLE SCAN RESULTS===")
-        return self.format_scan(s.stdout)
+        return self.format_port_scan(s.stdout)
 
     # Formats output of scan to make more readable when printing/logging
     def format_port_scan(self, s):
@@ -28,6 +32,22 @@ class PortScanner:
             self.scanned_services_db[service] = version_info
             logging.info(banner)
             print(banner)
+
+    def check_risk(self):
+        load_dotenv()
+        api_key = os.getenv("NVD_API_KEY")
+        headers = {
+            "apiKey": api_key
+        }
+
+        params = {
+            "keywordSearch": "openssh"
+        }
+
+        response = requests.get("https://services.nvd.nist.gov/rest/json/cves/2.0", headers=headers, params=params)
+
+        data = response.json()
+        return data
 
     # Scans top 10 ports using nmap's --top-ports functionality
     def quick_scan(self, host):

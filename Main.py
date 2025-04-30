@@ -1,6 +1,7 @@
 from NetworkInfo import NetworkInfo
 from PingTool import PingTool
 import logging
+import requests
 from datetime import datetime
 from PortScanner import PortScanner
 from InputValidation import InputValidation
@@ -13,6 +14,8 @@ inp = None
 start_range = None
 end_range = None
 
+print(ps.check_risk())
+"""
 print("\n==========================="
       "\n[Welcome to NetworkChecker]"
       "\n===========================")
@@ -161,3 +164,4 @@ while not exit:
     else:
         exit = True
         print("\nThank you for using NetworkChecker. Have a great day!")
+"""
