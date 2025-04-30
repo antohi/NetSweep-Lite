@@ -14,7 +14,7 @@ inp = None
 start_range = None
 end_range = None
 
-print(ps.check_risk())
+ps.check_risk()
 """
 print("\n==========================="
       "\n[Welcome to NetworkChecker]"

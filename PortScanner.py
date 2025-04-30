@@ -44,10 +44,18 @@ class PortScanner:
             "keywordSearch": "openssh"
         }
 
-        response = requests.get("https://services.nvd.nist.gov/rest/json/cves/2.0", headers=headers, params=params)
+        response = requests.get("https://services.nvd.nist.gov/rest/json/cves/2.0?", headers=headers, params=params)
+        vulnerabilities = response.json().get("vulnerabilities", [])
+        print(vulnerabilities)
 
-        data = response.json()
-        return data
+        for vuln in vulnerabilities:
+            cve_id = vuln['cve']['id']
+            description = vuln['cve']['descriptions'][0]['value']
+            score_data = vuln['cve'].get('metrics', {}).get('cvssMetricV31', [{}])[0].get('cvssData', {})
+            severity = score_data.get('baseSeverity', 'UNKNOWN')
+            score = score_data.get('baseScore', 'N/A')
+            print(cve_id, description, score, severity)
+
 
     # Scans top 10 ports using nmap's --top-ports functionality
     def quick_scan(self, host):
