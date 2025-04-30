@@ -29,11 +29,12 @@ class PortScanner:
         banners = re.findall(r"(\d+)/(tcp|udp)\s+(\w+)\s+([\S]+)\s*(.*)", s)
         for  port, protocol, state, service, version_info in banners:
             banner = f"Port: {port}/{protocol}, State: {state}, Service: {service}, Version: {version_info}"
+            self.check_risk(service, version_info)
             self.scanned_services_db[service] = version_info
             logging.info(banner)
             print(banner)
 
-    def check_risk(self):
+    def check_risk(self, service, version_info):
         load_dotenv()
         api_key = os.getenv("NVD_API_KEY")
         headers = {
@@ -41,12 +42,11 @@ class PortScanner:
         }
 
         params = {
-            "keywordSearch": "openssh"
+            "keywordSearch": f"{service} {version_info}"
         }
 
         response = requests.get("https://services.nvd.nist.gov/rest/json/cves/2.0?", headers=headers, params=params)
         vulnerabilities = response.json().get("vulnerabilities", [])
-        print(vulnerabilities)
 
         for vuln in vulnerabilities:
             cve_id = vuln['cve']['id']
@@ -54,7 +54,10 @@ class PortScanner:
             score_data = vuln['cve'].get('metrics', {}).get('cvssMetricV31', [{}])[0].get('cvssData', {})
             severity = score_data.get('baseSeverity', 'UNKNOWN')
             score = score_data.get('baseScore', 'N/A')
-            print(cve_id, description, score, severity)
+            print(f"CVE: {cve_id}"  
+            f"\nDescription: {description}"
+            f"\nScore: {score}"
+            f"\nSeverity: {severity}")
 
 
     # Scans top 10 ports using nmap's --top-ports functionality

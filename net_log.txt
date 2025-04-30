@@ -16,3 +16,8 @@ INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
 INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
 WARNING:root:[FAIL]: Ping to 8.8.8.10 was unsuccessful. Return code: 2
 WARNING:root:[FAIL]: Ping to 8.8.8.9 was unsuccessful. Return code: 2
+INFO:root:2025-04-30 18:44:54.755156
+INFO:root:
+
+===SERVICE SCAN RESULTS===
+INFO:root:Port: 53/tcp, State: open, Service: tcpwrapped, Version: 443/tcp open  ssl/https  HTTP server (unknown)

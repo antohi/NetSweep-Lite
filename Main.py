@@ -14,8 +14,7 @@ inp = None
 start_range = None
 end_range = None
 
-ps.check_risk()
-"""
+
 print("\n==========================="
       "\n[Welcome to NetworkChecker]"
       "\n===========================")
@@ -164,4 +163,3 @@ while not exit:
     else:
         exit = True
         print("\nThank you for using NetworkChecker. Have a great day!")
-"""
