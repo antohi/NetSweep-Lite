@@ -21,3 +21,22 @@ INFO:root:
 
 ===SERVICE SCAN RESULTS===
 INFO:root:Port: 53/tcp, State: open, Service: tcpwrapped, Version: 443/tcp open  ssl/https  HTTP server (unknown)
+INFO:root:2025-05-01 18:09:25.039358
+INFO:root:
+
+===SERVICE SCAN RESULTS===
+INFO:root:Port: 53/tcp, State: open, Service: tcpwrapped, Version: 443/tcp open  ssl/https  HTTP server (unknown)
+INFO:root:2025-05-01 18:13:15.472621
+INFO:root:
+
+===SERVICE SCAN RESULTS===
+INFO:root:Port: 53/tcp, State: open, Service: tcpwrapped, Version: 443/tcp open  ssl/https  HTTP server (unknown)
+INFO:root:2025-05-01 18:18:36.858179
+INFO:root:
+
+===SERVICE SCAN RESULTS===
+INFO:root:Port: 53/tcp, State: open, Service: domain, Version: Unbound
+INFO:root:Port: 80/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:Port: 8080/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 8443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy

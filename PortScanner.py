@@ -46,18 +46,21 @@ class PortScanner:
         }
 
         response = requests.get("https://services.nvd.nist.gov/rest/json/cves/2.0?", headers=headers, params=params)
-        vulnerabilities = response.json().get("vulnerabilities", [])
+        try:
+            vulnerabilities = response.json().get("vulnerabilities", [])
 
-        for vuln in vulnerabilities:
-            cve_id = vuln['cve']['id']
-            description = vuln['cve']['descriptions'][0]['value']
-            score_data = vuln['cve'].get('metrics', {}).get('cvssMetricV31', [{}])[0].get('cvssData', {})
-            severity = score_data.get('baseSeverity', 'UNKNOWN')
-            score = score_data.get('baseScore', 'N/A')
-            print(f"CVE: {cve_id}"  
-            f"\nDescription: {description}"
-            f"\nScore: {score}"
-            f"\nSeverity: {severity}")
+            for vuln in vulnerabilities:
+                cve_id = vuln['cve']['id']
+                description = vuln['cve']['descriptions'][0]['value']
+                score_data = vuln['cve'].get('metrics', {}).get('cvssMetricV31', [{}])[0].get('cvssData', {})
+                severity = score_data.get('baseSeverity', 'UNKNOWN')
+                score = score_data.get('baseScore', 'N/A')
+                print(f"CVE: {cve_id}"  
+                f"\nDescription: {description}"
+                f"\nScore: {score}"
+                f"\nSeverity: {severity}")
+        except Exception as e:
+            print(f"Error: {e}")
 
 
     # Scans top 10 ports using nmap's --top-ports functionality
