@@ -5,11 +5,14 @@ import requests
 from datetime import datetime
 from PortScanner import PortScanner
 from InputValidation import InputValidation
+from RiskScanner import RiskScanner
+
 logging.basicConfig(filename="net_log.txt", level=logging.INFO)
 
 ni = NetworkInfo()
 pt = PingTool()
 ps = PortScanner()
+rs = RiskScanner()
 inp = None
 start_range = None
 end_range = None
@@ -31,6 +34,7 @@ while not exit:
           "\n1) IP Ping Tool"
           "\n2) Port Scanner"
           "\n3) Log System/Network Information"
+          "\n4) Service Risk Scan"
           "\n>", end=" ")
     choice = input().lower().strip()
 
@@ -93,7 +97,6 @@ while not exit:
               "\n1) Scan Single Port"
               "\n2) Quick Scan (Top 10 Ports)"
               "\n3) Deep Scan (Top 25 Ports)"
-              "\n4) Service Detection"
               "\n>", end=" ")
         choice = input()
 
@@ -134,18 +137,6 @@ while not exit:
             print("\nScanning ports...", end="")
             ps.deep_scan(ip)
 
-        # Retrieves banner information
-        elif choice == "4":
-            print("\n--SERVICE SCAN--"
-                  "\nInput the IP address: ", end="")
-            ip = input()
-            while InputValidation.validate_ip(ip) is False: # IP validation
-                print("\n[INVALID IP] Invalid IP address! Please enter a valid IP address.\n")
-                print("Input the IP address: ", end="")
-                ip = input()
-            print("\nDetecting services (this may take a few minutes)...")
-            ps.scan_banners(ip)
-
     # Main Menu choice 3 - Logs system/network information
     elif choice == "3":
         print("\n--SYS/NET INFO LOGGING--")
@@ -153,6 +144,18 @@ while not exit:
         net_info = f"{ni.get_socket()} {ni.get_default_gateway()} {ni.get_dns_nameservers()}"
         ni.get_sys_info()
         print(net_info)
+
+    # Retrieves banner information
+    elif choice == "4":
+        print("\n--SERVICE RISK SCAN--"
+              "\nInput the IP address: ", end="")
+        ip = input()
+        while InputValidation.validate_ip(ip) is False:  # IP validation
+            print("\n[INVALID IP] Invalid IP address! Please enter a valid IP address.\n")
+            print("Input the IP address: ", end="")
+            ip = input()
+        print("\nDetecting risk in services (this may take a few minutes)...")
+        rs.scan_banners(ip)
 
     # Choice to return to main menu after any option is completed
     print("\nReturn to Menu? (Y/N)"

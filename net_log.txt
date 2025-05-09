@@ -164,3 +164,16 @@ INFO:root:
 PORT: 8080/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
 INFO:root:
 PORT: 8443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:root:2025-05-09 19:50:44.437969
+INFO:root:2025-05-09 19:51:02.234164
+INFO:root:2025-05-09 19:51:10.328067
+INFO:root:2025-05-09 19:51:42.821504
+INFO:root:
+
+===SERVICE SCAN RESULTS===
+INFO:root:PORT: 53/tcp | STATE: OPEN | SERVICE: domain | VERSION: Unbound
+INFO:root:PORT: 80/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:root:PORT: 443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:root:PORT: 8080/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:root:PORT: 8443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:root:2025-05-09 19:53:37.031240
