@@ -8,7 +8,6 @@ from InputValidation import InputValidation
 from RiskScanner import RiskScanner
 
 logging.basicConfig(filename="net_log.txt", level=logging.INFO)
-
 ni = NetworkInfo()
 pt = PingTool()
 ps = PortScanner()
