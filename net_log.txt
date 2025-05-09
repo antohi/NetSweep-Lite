@@ -40,3 +40,127 @@ INFO:root:Port: 80/tcp, State: open, Service: http, Version: Cloudflare http pro
 INFO:root:Port: 443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
 INFO:root:Port: 8080/tcp, State: open, Service: http, Version: Cloudflare http proxy
 INFO:root:Port: 8443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:2025-05-02 16:39:08.921337
+INFO:root:
+
+===SERVICE SCAN RESULTS===
+INFO:root:Port: 53/tcp, State: open, Service: tcpwrapped, Version: 443/tcp open  ssl/https  HTTP server (unknown)
+INFO:root:
+
+===SERVICE SCAN RESULTS===
+INFO:root:Port: 53/tcp, State: open, Service: domain, Version: Unbound
+INFO:root:Port: 80/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:Port: 8080/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 8443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:2025-05-02 16:43:19.246899
+INFO:root:
+
+===SERVICE SCAN RESULTS===
+INFO:root:Port: 53/tcp, State: open, Service: domain, Version: Unbound
+INFO:root:Port: 80/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:Port: 8080/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 8443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:2025-05-03 14:49:51.089448
+INFO:root:
+
+===SERVICE SCAN RESULTS===
+INFO:root:Port: 53/tcp, State: open, Service: domain, Version: Unbound
+INFO:root:Port: 80/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:Port: 8080/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 8443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:2025-05-07 22:20:48.879473
+INFO:root:[LOCAL IP] 192.168.12.59
+INFO:root:[GATEWAY] 192.168.12.1
+INFO:root:[DNS SERVERS] 192.168.12.1, fdc6:67dd:af11::1
+INFO:root:
+===SYSTEM/NETWORK INFO===
+INFO:root:[PLATFORM] macOS-14.6-arm64-arm-64bit
+INFO:root:[CPU] arm64
+INFO:root:[USER] root
+INFO:root:2025-05-07 22:21:03.414224
+INFO:root:
+
+===SERVICE SCAN RESULTS===
+INFO:root:Port: 53/tcp, State: open, Service: domain, Version: Unbound
+INFO:root:Port: 80/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:Port: 8080/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 8443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:2025-05-07 22:29:00.231922
+INFO:root:[LOCAL IP] 192.168.12.59
+INFO:root:[GATEWAY] 192.168.12.1
+INFO:root:[DNS SERVERS] 192.168.12.1, fdc6:67dd:af11::1
+INFO:root:
+===SYSTEM/NETWORK INFO===
+INFO:root:[PLATFORM] macOS-14.6-arm64-arm-64bit
+INFO:root:[CPU] arm64
+INFO:root:[USER] root
+INFO:root:
+
+===SERVICE SCAN RESULTS===
+INFO:root:Port: 53/tcp, State: open, Service: domain, Version: Unbound
+INFO:root:Port: 80/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:Port: 8080/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 8443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:2025-05-07 22:31:48.638660
+INFO:root:2025-05-07 22:34:31.264363
+INFO:root:
+
+===SERVICE SCAN RESULTS===
+INFO:root:Port: 53/tcp, State: open, Service: domain, Version: Unbound
+INFO:root:Port: 80/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:Port: 8080/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 8443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:2025-05-07 22:39:20.919318
+INFO:root:
+
+===SERVICE SCAN RESULTS===
+INFO:root:Port: 53/tcp, State: open, Service: domain, Version: Unbound
+INFO:root:Port: 80/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:Port: 8080/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 8443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:2025-05-07 22:46:08.626166
+INFO:root:
+
+===SERVICE SCAN RESULTS===
+INFO:root:Port: 53/tcp, State: open, Service: domain, Version: Unbound
+INFO:root:Port: 80/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:Port: 8080/tcp, State: open, Service: http, Version: Cloudflare http proxy
+INFO:root:Port: 8443/tcp, State: open, Service: ssl/http, Version: Cloudflare http proxy
+INFO:root:2025-05-07 22:51:02.004414
+INFO:root:
+
+===SERVICE SCAN RESULTS===
+INFO:root:
+🔎 [OPEN PORT] 53/tcp | STATE: OPEN | SERVICE: domain | VERSION: Unbound
+INFO:root:
+🔎 [OPEN PORT] 80/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:root:
+🔎 [OPEN PORT] 443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:root:
+🔎 [OPEN PORT] 8080/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:root:
+🔎 [OPEN PORT] 8443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:root:2025-05-07 22:54:52.208061
+INFO:root:2025-05-07 22:55:06.574754
+INFO:root:2025-05-07 22:55:15.479885
+INFO:root:
+
+===SERVICE SCAN RESULTS===
+INFO:root:
+PORT: 53/tcp | STATE: OPEN | SERVICE: domain | VERSION: Unbound
+INFO:root:
+PORT: 80/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:root:
+PORT: 443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:root:
+PORT: 8080/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:root:
+PORT: 8443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy

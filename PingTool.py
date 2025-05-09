@@ -3,7 +3,6 @@ import platform
 import logging
 import concurrent.futures
 import re
-from playsound import playsound
 import ipaddress
 
 class PingTool:
