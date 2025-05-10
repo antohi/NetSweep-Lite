@@ -2,89 +2,106 @@ import logging
 import re
 import subprocess
 import requests
-from dotenv import load_dotenv
 import os
 import textwrap
+from dotenv import load_dotenv
 
 class RiskScanner:
     def __init__(self):
-        self.scanned_services_db = {}
+        load_dotenv()
+        self.api_key = os.getenv("NVD_API_KEY")
         self.risk_db = {}
 
-        self.risk_logger = logging.getLogger("RiskLogger")
+        self.risk_logger = logging.getLogger("RiskScanner")
         self.risk_logger.setLevel(logging.INFO)
         handler = logging.FileHandler("risk_log.txt")
         handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
         self.risk_logger.addHandler(handler)
 
-    def check_risk(self, service, version_info):
-        load_dotenv()
-        api_key = os.getenv("NVD_API_KEY")
-        headers = {
-            "apiKey": api_key
-        }
+    def scan_banners(self, host):
+        print("\n\n=== SERVICE RISK SCAN ===")
+        scan = subprocess.run(
+            ["nmap", "-sV", host],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
+        )
+        self.process_banners(scan.stdout)
 
-        params = {
-            "keywordSearch": f"{service} {version_info}"
-        }
+    def process_banners(self, output):
+        pattern = r"(\d+)/(tcp|udp)\s+(open|closed|filtered)\s+([\S]+)\s*(.*)"
+        for port, proto, state, service, version in re.findall(pattern, output):
+            # Map generic 'domain' service to actual product
+            product = version if service == "domain" else service
+            header = f"PORT: {port}/{proto} | STATE: {state.upper()} | SERVICE: {product} | VERSION: {version}"
+            print(header)
+            self.risk_logger.info(header)
 
-        results = []
+            # Fetch and display relevant CVEs
+            cves = self.check_risk(product)
+            self.format_risks(cves)
+
+            print("=" * 60)
+
+    def check_risk(self, product):
+        url = "https://services.nvd.nist.gov/rest/json/cves/2.0"
+        headers = {"apiKey": self.api_key}
+        params = {"keywordSearch": product}
+
         try:
-            response = requests.get("https://services.nvd.nist.gov/rest/json/cves/2.0?", headers=headers, params=params)
-            vulnerabilities = response.json().get("vulnerabilities", [])
+            response = requests.get(url, headers=headers, params=params)
             if response.status_code != 200:
+                print("[!] NVD API query failed or no data.")
                 return []
 
-            for vuln in vulnerabilities:
-                cve_id = vuln['cve']['id']
-                description = vuln['cve']['descriptions'][0]['value']
-                score_data = vuln['cve'].get('metrics', {}).get('cvssMetricV31', [{}])[0].get('cvssData', {})
-                severity = score_data.get('baseSeverity', 'UNKNOWN')
-                score = score_data.get('baseScore', 'N/A')
+            results = []
+            data = response.json().get("vulnerabilities", [])
+            for item in data:
+                meta = item['cve']
+                # Filter by CPE criteria
+                nodes = meta.get('configurations', {}).get('nodes', [])
+                if not any(
+                    any(product.lower() in cm['criteria'].lower() for cm in node.get('cpeMatch', []))
+                    for node in nodes
+                ):
+                    continue
 
-                result = {
-                        "cve_id": cve_id,
-                        "description": description,
-                        "score": score,
-                        "severity": severity
-                        }
-                self.risk_db[cve_id] = {
-                                        "description": description,
-                                        "score": score,
-                                        "severity": severity
-                                        }
-                results.append(result)
-            return self.format_risks(results)
+                cve_id = meta['id']
+                desc = meta['descriptions'][0]['value']
+                cvss = meta.get('metrics', {}).get('cvssMetricV31', [{}])[0].get('cvssData', {})
+                severity = cvss.get('baseSeverity', 'UNKNOWN')
+                score = cvss.get('baseScore', 'N/A')
+
+                entry = {
+                    "cve_id": cve_id,
+                    "description": desc,
+                    "severity": severity,
+                    "score": score
+                }
+                self.risk_db[cve_id] = entry
+                results.append(entry)
+
+            return results
 
         except Exception as e:
-            return f"Error: {e}"
+            print(f"[ERROR] CVE lookup failed: {e}")
+            return []
 
-    def format_risks(self, results):
-        for result in results:
-            print(f"\nCVE: {result['cve_id']}")
-            print(f"Description:\n{textwrap.fill(result['description'], width=80)}")
-            print(f"Score: {result['score']} ({result['severity']})\n")
+    def format_risks(self, results, min_severity="HIGH", top_n=3):
+        order = ["UNKNOWN", "LOW", "MEDIUM", "HIGH", "CRITICAL"]
+        # Log every CVE
+        for e in results:
+            self.risk_logger.info(f"{e['cve_id']} | {e['severity']} | {e['score']} | {e['description'][:50]}...")
 
-        # Nmap banners detection
-    def scan_banners(self, host):
-        scan_cmd = ["nmap", "-sV", host]
-        s = subprocess.run(scan_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        print("\n\n===SERVICE SCAN RESULTS===")
-        return self.format_banner_scan(s.stdout)
+        # Filter and sort
+        filtered = [e for e in results if order.index(e['severity']) >= order.index(min_severity)]
+        filtered.sort(key=lambda e: (e['score'] if isinstance(e['score'], (int, float)) else 0), reverse=True)
 
-    def format_banner_scan(self, s):
-        banners = re.findall(r"(\d+)/(tcp|udp)\s+(\w+)\s+([\S]+)\s*(.*)", s)
-        for  port, protocol, state, service, version_info in banners:
-            banner = f"PORT: {port}/{protocol} | STATE: {state.upper()} | SERVICE: {service} | VERSION: {version_info}"
-            print(banner)
-            self.check_risk(service, version_info)
-            print("=" * 60)
-            self.risk_logger.info(banner)
+        if not filtered:
+            print("[+] No CVEs at or above severity:", min_severity)
+            return
 
-    def log_risk(self):
-        self.risk_logger.info("\n\n===SERVICE SCAN RESULTS===")
-        for cve_id, risk in self.risk_db.items():
-            self.risk_logger.info(f"CVE: {cve_id}")
-            self.risk_logger.info(f"Description: {risk['description']}")
-            self.risk_logger.info(f"Score: {risk['score']} ({risk['severity']})")
-            self.risk_logger.info("-" * 60)
+        for e in filtered[:top_n]:
+            print(f"\n[!] {e['cve_id']}  ({e['severity']})")
+            print(f"[!] Description:\n{textwrap.fill(e['description'], width=80)}")
+            print(f"[!] Score: {e['score']}\n")
+
+

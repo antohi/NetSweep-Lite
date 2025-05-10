@@ -156,7 +156,6 @@ while not exit:
             ip = input()
         print("\nDetecting risk in services (this may take a few minutes)...")
         rs.scan_banners(ip)
-        rs.log_risk()
 
     # Choice to return to main menu after any option is completed
     print("\nReturn to Menu? (Y/N)"
