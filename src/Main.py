@@ -45,6 +45,7 @@ while not exit:
               "\n2) Ping Range of IPs"
               "\n>", end=" ")
         choice = input().lower().strip()
+
         # Choice 1 of Ping Tool
         if choice.strip() == "1":
             add_more = True
@@ -144,7 +145,7 @@ while not exit:
         ni.get_sys_info()
         print(net_info)
 
-    # Retrieves banner information
+    # Retrieves risk scan
     elif choice == "4":
         print("\n--SERVICE RISK SCAN--"
               "\nInput the IP address: ", end="")
@@ -155,6 +156,7 @@ while not exit:
             ip = input()
         print("\nDetecting risk in services (this may take a few minutes)...")
         rs.scan_banners(ip)
+        rs.log_risk()
 
     # Choice to return to main menu after any option is completed
     print("\nReturn to Menu? (Y/N)"

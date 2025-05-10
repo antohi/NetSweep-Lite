@@ -11,6 +11,12 @@ class RiskScanner:
         self.scanned_services_db = {}
         self.risk_db = {}
 
+        self.risk_logger = logging.getLogger("RiskLogger")
+        self.risk_logger.setLevel(logging.INFO)
+        handler = logging.FileHandler("risk_log.txt")
+        handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+        self.risk_logger.addHandler(handler)
+
     def check_risk(self, service, version_info):
         load_dotenv()
         api_key = os.getenv("NVD_API_KEY")
@@ -22,11 +28,12 @@ class RiskScanner:
             "keywordSearch": f"{service} {version_info}"
         }
 
-        response = requests.get("https://services.nvd.nist.gov/rest/json/cves/2.0?", headers=headers, params=params)
+        results = []
         try:
+            response = requests.get("https://services.nvd.nist.gov/rest/json/cves/2.0?", headers=headers, params=params)
             vulnerabilities = response.json().get("vulnerabilities", [])
             if response.status_code != 200:
-                print("No vulnerabilities in NVD database found.")
+                return []
 
             for vuln in vulnerabilities:
                 cve_id = vuln['cve']['id']
@@ -35,18 +42,34 @@ class RiskScanner:
                 severity = score_data.get('baseSeverity', 'UNKNOWN')
                 score = score_data.get('baseScore', 'N/A')
 
-                print(f"\nCVE: {cve_id}")
-                print(f"Description:\n{textwrap.fill(description, width=80)}")
-                print(f"Score: {score} ({severity})\n")
-        except Exception as e:
-            print(f"Error: {e}")
+                result = {
+                        "cve_id": cve_id,
+                        "description": description,
+                        "score": score,
+                        "severity": severity
+                        }
+                self.risk_db[cve_id] = {
+                                        "description": description,
+                                        "score": score,
+                                        "severity": severity
+                                        }
+                results.append(result)
+            return self.format_risks(results)
 
-    # Nmap banners detection
+        except Exception as e:
+            return f"Error: {e}"
+
+    def format_risks(self, results):
+        for result in results:
+            print(f"\nCVE: {result['cve_id']}")
+            print(f"Description:\n{textwrap.fill(result['description'], width=80)}")
+            print(f"Score: {result['score']} ({result['severity']})\n")
+
+        # Nmap banners detection
     def scan_banners(self, host):
         scan_cmd = ["nmap", "-sV", host]
         s = subprocess.run(scan_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         print("\n\n===SERVICE SCAN RESULTS===")
-        logging.info("\n\n===SERVICE SCAN RESULTS===")
         return self.format_banner_scan(s.stdout)
 
     def format_banner_scan(self, s):
@@ -56,4 +79,12 @@ class RiskScanner:
             print(banner)
             self.check_risk(service, version_info)
             print("=" * 60)
-            logging.info(banner)
+            self.risk_logger.info(banner)
+
+    def log_risk(self):
+        self.risk_logger.info("\n\n===SERVICE SCAN RESULTS===")
+        for cve_id, risk in self.risk_db.items():
+            self.risk_logger.info(f"CVE: {cve_id}")
+            self.risk_logger.info(f"Description: {risk['description']}")
+            self.risk_logger.info(f"Score: {risk['score']} ({risk['severity']})")
+            self.risk_logger.info("-" * 60)
