@@ -43,6 +43,7 @@ def run_ping_tool():
                 print("\n[INVALID IP] Invalid IP address! Please enter a valid IP.\n")
             else:
                 pt.add_ip(ip)
+
     # Choice 2 of Ping Tool
     elif choice == "2":
         print("\n--RANGE PING TOOL--")

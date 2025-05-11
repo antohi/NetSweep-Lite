@@ -59,6 +59,7 @@ class RiskScanner:
                 meta = item['cve']
                 # Filter by CPE criteria
                 nodes = meta.get('configurations', {}).get('nodes', [])
+
                 if not any(
                     any(product.lower() in cm['criteria'].lower() for cm in node.get('cpeMatch', []))
                     for node in nodes
