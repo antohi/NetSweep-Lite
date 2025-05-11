@@ -82,3 +82,8 @@
 2025-05-09 22:25:47,707 - INFO - PORT: 443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
 2025-05-09 22:25:47,896 - INFO - PORT: 8080/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
 2025-05-09 22:25:49,059 - INFO - PORT: 8443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+2025-05-09 22:41:35,911 - INFO - PORT: 53/tcp | STATE: OPEN | SERVICE: Unbound | VERSION: Unbound
+2025-05-09 22:41:36,391 - INFO - PORT: 80/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+2025-05-09 22:41:37,819 - INFO - PORT: 443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+2025-05-09 22:41:38,029 - INFO - PORT: 8080/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+2025-05-09 22:41:39,029 - INFO - PORT: 8443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy

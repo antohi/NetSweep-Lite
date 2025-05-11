@@ -148,3 +148,29 @@ INFO:RiskScanner:PORT: 80/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflar
 INFO:RiskScanner:PORT: 443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
 INFO:RiskScanner:PORT: 8080/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
 INFO:RiskScanner:PORT: 8443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:root:2025-05-09 22:40:21.234410
+INFO:RiskScanner:PORT: 53/tcp | STATE: OPEN | SERVICE: Unbound | VERSION: Unbound
+INFO:RiskScanner:PORT: 80/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 8080/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 8443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:root:2025-05-09 22:43:35.115542
+INFO:root:2025-05-09 22:43:46.100180
+INFO:root:2025-05-09 22:44:09.399349
+INFO:root:2025-05-09 22:44:21.244758
+INFO:root:2025-05-09 22:44:43.864089
+INFO:root:2025-05-09 22:45:03.670752
+INFO:root:
+
+===SINGLE SCAN RESULTS===
+INFO:root:PORT: 80/tcp | STATE: OPEN | SERVICE: (http)
+INFO:root:2025-05-09 22:47:23.820810
+INFO:root:[LOCAL IP] 192.168.12.59
+INFO:root:[GATEWAY] 192.168.12.1
+INFO:root:[DNS SERVERS] 192.168.12.1, fdc6:67dd:af11::1
+INFO:root:
+===SYSTEM/NETWORK INFO===
+INFO:root:[PLATFORM] macOS-14.6-arm64-arm-64bit
+INFO:root:[CPU] arm64
+INFO:root:[USER] root
+INFO:root:2025-05-11 10:20:49.136046

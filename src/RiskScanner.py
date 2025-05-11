@@ -19,12 +19,13 @@ class RiskScanner:
         self.risk_logger.addHandler(handler)
 
     def scan_banners(self, host):
-        print("\n\n=== SERVICE RISK SCAN ===")
         scan = subprocess.run(
             ["nmap", "-sV", host],
             stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
         )
+        print("\n\n=== SERVICE RISK SCAN ===")
         self.process_banners(scan.stdout)
+
 
     def process_banners(self, output):
         pattern = r"(\d+)/(tcp|udp)\s+(open|closed|filtered)\s+([\S]+)\s*(.*)"
