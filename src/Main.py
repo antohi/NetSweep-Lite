@@ -115,7 +115,7 @@ def last_scan_results():
 
 def main_menu():
     print("\n==========================="
-          "\n[Welcome to NetworkChecker]"
+          "\n[NetSweep Lite]"
           "\n===========================")
     print("\n[MENU]"
           "\n1) Diagnostics (Ping / Port Scanner)"
@@ -150,6 +150,7 @@ def main_loop():
             print("\nThank you for using NetworkChecker. Have a great day!")
         else:
             print("[ERROR] Invalid menu choice.")
+            continue
         if not exit:
             cont = input("\nReturn to Menu? (Y/N): ").strip().lower()
             if cont != "y":

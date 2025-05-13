@@ -14,7 +14,19 @@ class RiskScanner:
     def __init__(self):
         load_dotenv()
         self.api_key = os.getenv("NVD_API_KEY")
-        self.detected_risks = {}
+        self.service_map = {
+            "ssh": "OpenSSH",
+            "http": "Apache",
+            "microsoft-ds": "SMB",
+            "smtp": "Postfix",
+            "dns": "BIND",
+            "imap": "Dovecot",
+            "ftp": "vsftpd",
+            "mysql": "MySQL",
+            "msrpc": "RPC",
+            "tcpwrapped": "generic",
+            "telnet": "Telnet",
+        }
 
     # Initiates banner scan using nmap
     def scan_banners(self, host):
@@ -32,12 +44,15 @@ class RiskScanner:
             # Map generic 'domain' service to actual product
             product = version if service == "domain" else service
             header = f"PORT: {port}/{proto} | STATE: {state.upper()} | SERVICE: {product} | VERSION: {version}"
-            print(header)
 
-            kevs = self.detect_kevs(product)
+            mapped_product = self.service_map.get(service.lower(), product)
+            print(header)
+            kevs = self.detect_kevs(mapped_product)
+
             if isinstance(kevs, dict):
                 if kevs:
                     self.print_kevs(kevs)
+                    self.log_kevs(kevs)
                 else:
                     print("[+] No KEV found")
             else:
@@ -51,7 +66,7 @@ class RiskScanner:
             with open("assets/catalogs/known_exploited_vulnerabilities.csv") as kev:
                 reader = csv.DictReader(kev)
                 for row in reader:
-                    if product.lower() in row["product"].lower() or product.lower() in row["vendorProject"].lower() or product.lower() in row["shortDescription"].lower():
+                    if product.lower() in row["product"].lower() or product.lower() in row["vendorProject"].lower():
                         info = [row["vendorProject"], row["product"], row["vulnerabilityName"], row["dateAdded"], row["shortDescription"], row["notes"]]
                         kevs_detected[row["cveID"]] = info
                     else:
@@ -72,7 +87,21 @@ class RiskScanner:
                 print(f"     Added: {kevs_detected[kev][3]}\n")
 
 
-
+    def log_kevs(self, kevs_detected):
+        try:
+            csv_path = "logs/kev_log.csv"
+            # CSV
+            with open(csv_path, 'w') as f:
+                f.write(
+                    "cveID,vendorProject,description,vendor,product,added\n")
+                for kev in kevs_detected:
+                    f.write(
+                        f"{kev},{kevs_detected[kev][2]},"
+                        f"{kevs_detected[kev][4]},{kevs_detected[kev][0]},"
+                        f"{kevs_detected[kev][1]},{kevs_detected[kev][3]},"
+                    )
+        except Exception as e:
+            logging.error(f"[!] ERROR: Unable to write report CSV file. Exception: {e}")
 
 
 
