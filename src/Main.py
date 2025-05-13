@@ -6,6 +6,8 @@ from InputValidation import InputValidation
 import logging
 from datetime import datetime
 
+# NMap Scan Me: 45.33.32.156
+
 # Initialize tools
 ni = NetworkInfo()
 pt = PingTool()
@@ -108,9 +110,7 @@ def run_service_risk_scan():
 def last_scan_results():
     if not rs.scan_banners():
         print("\n[!] No scan history found")
-        return
-    print("\n=== LAST SCAN RESULTS ===")
-
+    return rs.get_scan_history()
 
 
 def main_menu():
@@ -121,7 +121,8 @@ def main_menu():
           "\n1) Diagnostics (Ping / Port Scanner)"
           "\n2) System / Network Info"
           "\n3) Service Risk Scan"
-          "\n4) Quit")
+          "\n4) Scan History"
+          "\n5) Quit")
     return input("> ").strip()
 
 def main_loop():
@@ -142,6 +143,9 @@ def main_loop():
         elif choice == "3":
             run_service_risk_scan()
         elif choice == "4":
+            print("--SCAN HISTORY--")
+            last_scan_results()
+        elif choice == "5":
             exit = True
             print("\nThank you for using NetworkChecker. Have a great day!")
         else:

@@ -46,28 +46,28 @@ Run the Program
 
 # Screenshots (CML UI Output)
 ## Main Menu:
-![Main Menu](Assets/Screenshots/main_menu_cml.png)
+![Main Menu](assets/screenshots/main_menu_cml.png)
 
 ## Single/Multiple IP Pings:
-![Scan Results](Assets/Screenshots/single_multiple_ping_cml.png)
+![Scan Results](assets/screenshots/single_multiple_ping_cml.png)
 
 ## Range IP Pings:
-![Scan Results](Assets/Screenshots/range_ping_cml.png)
+![Scan Results](assets/screenshots/range_ping_cml.png)
 
 ## Quick Port Scan (Top 10 Ports in IP):
-![Scan Results](Assets/Screenshots/quick_port_scan_cml.png)
+![Scan Results](assets/screenshots/quick_port_scan_cml.png)
 
 ## Deep Scan (Top 25 Ports in IP):
-![Scan Results](Assets/Screenshots/deep_port_scan_cml.png)
+![Scan Results](assets/screenshots/deep_port_scan_cml.png)
 
 ---
 
 # Screenshots (net_log.txt Output)
 ## Ping Tool Output (w/ System and Network Info Logging):
-![Terminal View](Assets/Screenshots/Net_Log_Output_Pings.png)
+![Terminal View](assets/screenshots/Net_Log_Output_Pings.png)
 
 ## Output for Port Scanner:
-![Terminal View](Assets/Screenshots/portscanner_netlog.png)
+![Terminal View](assets/screenshots/portscanner_netlog.png)
 
 ---
 

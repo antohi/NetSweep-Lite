@@ -26,11 +26,11 @@ class PingTool:
             if p.returncode == 0:
                 self.get_detailed_info(str(p), ip)
                 logging.info(f"[SUCCESS]: Ping to {ip} was successful")
- #               playsound('/Assets/ding.mp3')
+ #               playsound('/assets/ding.mp3')
                 return  f"{ip} is UP"
             else:
                 logging.warning(f"[FAIL]: Ping to {ip} was unsuccessful. Return code: {p.returncode}")
-#               playsound('/Assets/error.mp3')
+#               playsound('/assets/error.mp3')
                 return f"{ip} is DOWN"
         except Exception as e:
             logging.error(f"[EXCEPTION]: {e}" )

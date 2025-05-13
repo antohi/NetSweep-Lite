@@ -215,3 +215,89 @@ INFO:RiskScanner:PORT: 8443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Clo
 INFO:root:2025-05-13 11:18:57.207073
 INFO:RiskScanner:PORT: 53/tcp | STATE: OPEN | SERVICE: tcpwrapped | VERSION: 443/tcp open  ssl/https  HTTP server (unknown)
 INFO:root:2025-05-13 11:22:00.004255
+INFO:root:2025-05-13 11:48:09.499812
+INFO:root:2025-05-13 12:05:55.928004
+INFO:root:2025-05-13 12:07:41.140983
+INFO:RiskScanner:PORT: 22/tcp | STATE: OPEN | SERVICE: ssh | VERSION: OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
+INFO:RiskScanner:PORT: 25/tcp | STATE: FILTERED | SERVICE: smtp | VERSION: 80/tcp    open     http         Apache httpd 2.4.7 ((Ubuntu))
+INFO:RiskScanner:PORT: 135/tcp | STATE: FILTERED | SERVICE: msrpc | VERSION: 139/tcp   filtered netbios-ssn
+INFO:RiskScanner:PORT: 445/tcp | STATE: FILTERED | SERVICE: microsoft-ds | VERSION: 9929/tcp  open     nping-echo   Nping echo
+INFO:RiskScanner:PORT: 31337/tcp | STATE: OPEN | SERVICE: tcpwrapped | VERSION: Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+INFO:root:2025-05-13 12:12:23.198736
+INFO:RiskScanner:PORT: 22/tcp | STATE: OPEN | SERVICE: ssh | VERSION: OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
+INFO:RiskScanner:PORT: 25/tcp | STATE: FILTERED | SERVICE: smtp | VERSION: 80/tcp    open     http         Apache httpd 2.4.7 ((Ubuntu))
+INFO:RiskScanner:PORT: 135/tcp | STATE: FILTERED | SERVICE: msrpc | VERSION: 139/tcp   filtered netbios-ssn
+INFO:RiskScanner:PORT: 445/tcp | STATE: FILTERED | SERVICE: microsoft-ds | VERSION: 9929/tcp  open     nping-echo   Nping echo
+INFO:RiskScanner:PORT: 31337/tcp | STATE: OPEN | SERVICE: tcpwrapped | VERSION: Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+INFO:root:2025-05-13 12:17:37.887181
+INFO:root:2025-05-13 12:17:57.752447
+INFO:RiskScanner:PORT: 53/tcp | STATE: OPEN | SERVICE: Unbound | VERSION: Unbound
+INFO:RiskScanner:PORT: 80/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 8080/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 8443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:root:2025-05-13 12:22:21.808433
+INFO:RiskScanner:PORT: 53/tcp | STATE: OPEN | SERVICE: Unbound | VERSION: Unbound
+INFO:RiskScanner:PORT: 80/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 8080/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 8443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:root:2025-05-13 12:31:34.076990
+INFO:RiskScanner:PORT: 53/tcp | STATE: OPEN | SERVICE: Unbound | VERSION: Unbound
+INFO:RiskScanner:PORT: 80/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 8080/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 8443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:root:2025-05-13 12:37:28.611974
+INFO:root:2025-05-13 12:37:36.352834
+INFO:RiskScanner:PORT: 53/tcp | STATE: OPEN | SERVICE: Unbound | VERSION: Unbound
+INFO:RiskScanner:PORT: 80/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 8080/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 8443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:root:2025-05-13 12:40:36.509172
+INFO:RiskScanner:PORT: 22/tcp | STATE: OPEN | SERVICE: ssh | VERSION: OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
+INFO:RiskScanner:PORT: 25/tcp | STATE: FILTERED | SERVICE: smtp | VERSION: 80/tcp    open     http         Apache httpd 2.4.7 ((Ubuntu))
+INFO:RiskScanner:PORT: 135/tcp | STATE: FILTERED | SERVICE: msrpc | VERSION: 139/tcp   filtered netbios-ssn
+INFO:RiskScanner:PORT: 445/tcp | STATE: FILTERED | SERVICE: microsoft-ds | VERSION: 9929/tcp  open     nping-echo   Nping echo
+INFO:RiskScanner:PORT: 31337/tcp | STATE: OPEN | SERVICE: tcpwrapped | VERSION: Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+INFO:root:2025-05-13 12:42:45.275384
+INFO:RiskScanner:PORT: 22/tcp | STATE: OPEN | SERVICE: ssh | VERSION: OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
+INFO:RiskScanner:PORT: 25/tcp | STATE: FILTERED | SERVICE: smtp | VERSION: 80/tcp    open     http         Apache httpd 2.4.7 ((Ubuntu))
+INFO:RiskScanner:PORT: 135/tcp | STATE: FILTERED | SERVICE: msrpc | VERSION: 139/tcp   filtered netbios-ssn
+INFO:RiskScanner:PORT: 445/tcp | STATE: FILTERED | SERVICE: microsoft-ds | VERSION: 9929/tcp  open     nping-echo   Nping echo
+INFO:RiskScanner:PORT: 31337/tcp | STATE: OPEN | SERVICE: tcpwrapped | VERSION: Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+INFO:root:2025-05-13 12:45:11.491939
+INFO:RiskScanner:PORT: 22/tcp | STATE: OPEN | SERVICE: ssh | VERSION: OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
+INFO:RiskScanner:PORT: 25/tcp | STATE: FILTERED | SERVICE: smtp | VERSION: 80/tcp    open     http         Apache httpd 2.4.7 ((Ubuntu))
+INFO:RiskScanner:PORT: 135/tcp | STATE: FILTERED | SERVICE: msrpc | VERSION: 139/tcp   filtered netbios-ssn
+INFO:RiskScanner:PORT: 445/tcp | STATE: FILTERED | SERVICE: microsoft-ds | VERSION: 9929/tcp  open     nping-echo   Nping echo
+INFO:RiskScanner:PORT: 31337/tcp | STATE: OPEN | SERVICE: tcpwrapped | VERSION: Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+INFO:root:2025-05-13 12:48:05.065083
+INFO:root:2025-05-13 12:48:13.431641
+INFO:RiskScanner:PORT: 22/tcp | STATE: OPEN | SERVICE: ssh | VERSION: OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
+INFO:root:2025-05-13 12:51:32.771605
+INFO:root:2025-05-13 12:52:48.871883
+INFO:RiskScanner:PORT: 53/tcp | STATE: OPEN | SERVICE: tcpwrapped | VERSION: 443/tcp open  ssl/https  HTTP server (unknown)
+INFO:root:2025-05-13 12:55:31.128056
+INFO:RiskScanner:PORT: 22/tcp | STATE: OPEN | SERVICE: ssh | VERSION: OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
+INFO:RiskScanner:PORT: 25/tcp | STATE: FILTERED | SERVICE: smtp | VERSION: 80/tcp    open     http         Apache httpd 2.4.7 ((Ubuntu))
+INFO:RiskScanner:PORT: 135/tcp | STATE: FILTERED | SERVICE: msrpc | VERSION: 139/tcp   filtered netbios-ssn
+INFO:RiskScanner:PORT: 445/tcp | STATE: FILTERED | SERVICE: microsoft-ds | VERSION: 9929/tcp  open     nping-echo   Nping echo
+INFO:RiskScanner:PORT: 31337/tcp | STATE: OPEN | SERVICE: tcpwrapped | VERSION: Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+INFO:root:2025-05-13 13:11:22.787865
+INFO:root:2025-05-13 13:11:45.920939
+INFO:RiskScanner:PORT: 22/tcp | STATE: OPEN | SERVICE: ssh | VERSION: OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
+INFO:RiskScanner:PORT: 25/tcp | STATE: FILTERED | SERVICE: smtp | VERSION: 80/tcp    open     http         Apache httpd 2.4.7 ((Ubuntu))
+INFO:RiskScanner:PORT: 135/tcp | STATE: FILTERED | SERVICE: msrpc | VERSION: 139/tcp   filtered netbios-ssn
+INFO:RiskScanner:PORT: 445/tcp | STATE: FILTERED | SERVICE: microsoft-ds | VERSION: 9929/tcp  open     nping-echo   Nping echo
+INFO:RiskScanner:PORT: 31337/tcp | STATE: OPEN | SERVICE: tcpwrapped | VERSION: Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+INFO:root:2025-05-13 14:31:06.502066
+INFO:root:2025-05-13 14:31:59.695923
+INFO:root:2025-05-13 14:37:57.069191
+INFO:root:2025-05-13 14:40:14.601448
+INFO:root:2025-05-13 14:40:39.498800
+INFO:root:2025-05-13 14:40:47.282407
+INFO:root:2025-05-13 14:44:53.640002
+INFO:root:2025-05-13 14:47:51.898703
+INFO:root:2025-05-13 14:50:07.957987
