@@ -61,7 +61,7 @@ def test_format_risks(capsys):
     assert "CVE-LOW" not in captured
     assert "Score:" in captured
 
-
+# Tests process_banners to test functionality of each banner scanned and risks detected
 def test_process_banners(monkeypatch, capsys):
     scanner = RiskScanner()
     dummy_cves = [
@@ -78,8 +78,38 @@ def test_process_banners(monkeypatch, capsys):
 
     scanner.process_banners(banner_output)
     captured = capsys.readouterr().out
+    print(captured)
 
     assert "PORT: 22/tcp | STATE: OPEN | SERVICE: ssh | VERSION: OpenSSH 7.9" in captured
+
+# Checks if last scanned is properly printed
+def test_get_scan_history(monkeypatch, capsys):
+    scanner = RiskScanner()
+    dummy_last_scanned = [
+        {
+            "cve_id": "CVE-dumb-dumb",
+            "description": "dumb-dumb description",
+            "severity": "HIGH",
+            "score": 7.1
+        },
+        {
+            "cve_id": "CVE-dumb-dumb-2",
+            "description": "dumb-dumb description 2",
+            "severity": "MEDIUM",
+            "score": 5.0
+        }
+    ]
+
+    scanner.scan_history = dummy_last_scanned
+    scanner.get_scan_history()
+    captured = capsys.readouterr().out
+    print(captured)
+
+    assert "CVE-dumb-dumb" in captured
+    assert "(HIGH)" in captured
+    assert "Score: 7.1" in captured
+
+
 
 
 

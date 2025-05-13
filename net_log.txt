@@ -177,3 +177,41 @@ INFO:root:2025-05-11 10:20:49.136046
 INFO:root:2025-05-11 10:21:56.685209
 INFO:root:2025-05-11 10:25:38.629057
 INFO:root:2025-05-11 10:51:11.859195
+INFO:root:2025-05-13 02:09:21.928048
+INFO:root:2025-05-13 02:12:58.483613
+INFO:root:
+
+===SINGLE SCAN RESULTS===
+INFO:root:PORT: 80/tcp | STATE: OPEN | SERVICE: (http)
+INFO:root:2025-05-13 02:13:27.571896
+INFO:root:2025-05-13 02:13:49.171702
+INFO:root:2025-05-13 02:15:14.303648
+INFO:root:===IP PING INFO===
+INFO:root:=LATENCY, PACKET LOSS, PING STATUS INFO=
+INFO:root:1.1.1.1 [LATENCY] Minimum: 14.835, Average: 19.098, Maximum: 25.828
+INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[SUCCESS]: Ping to 1.1.1.1 was successful
+INFO:root:
+
+===SINGLE SCAN RESULTS===
+INFO:root:PORT: 80/tcp | STATE: FILTERED | SERVICE: (http)
+INFO:RiskScanner:PORT: 53/tcp | STATE: OPEN | SERVICE: Unbound | VERSION: Unbound
+INFO:RiskScanner:PORT: 80/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 8080/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 8443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:root:2025-05-13 11:09:14.297633
+INFO:RiskScanner:PORT: 53/tcp | STATE: OPEN | SERVICE: Unbound | VERSION: Unbound
+INFO:RiskScanner:PORT: 80/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 8080/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 8443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:root:2025-05-13 11:14:36.187415
+INFO:RiskScanner:PORT: 53/tcp | STATE: OPEN | SERVICE: Unbound | VERSION: Unbound
+INFO:RiskScanner:PORT: 80/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 8080/tcp | STATE: OPEN | SERVICE: http | VERSION: Cloudflare http proxy
+INFO:RiskScanner:PORT: 8443/tcp | STATE: OPEN | SERVICE: ssl/http | VERSION: Cloudflare http proxy
+INFO:root:2025-05-13 11:18:57.207073
+INFO:RiskScanner:PORT: 53/tcp | STATE: OPEN | SERVICE: tcpwrapped | VERSION: 443/tcp open  ssl/https  HTTP server (unknown)
+INFO:root:2025-05-13 11:22:00.004255

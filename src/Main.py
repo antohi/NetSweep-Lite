@@ -105,6 +105,14 @@ def run_service_risk_scan():
     print("\nDetecting risk in services (this may take a few minutes)...")
     rs.scan_banners(ip)
 
+def last_scan_results():
+    if not rs.scan_banners():
+        print("\n[!] No scan history found")
+        return
+    print("\n=== LAST SCAN RESULTS ===")
+
+
+
 def main_menu():
     print("\n==========================="
           "\n[Welcome to NetworkChecker]"
