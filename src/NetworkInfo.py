@@ -5,12 +5,13 @@ import platform
 import os
 
 class NetworkInfo:
+    # Retrieves Local IP using socket
     def get_socket(self):
         socket_ip = (socket.gethostbyname(socket.gethostname())) # Gets local IP address
         logging.info(f"[LOCAL IP] {socket_ip}")
         return f"[LOCAL IP] {socket_ip}"
 
-
+    # Retrieves default gateway using netifaces
     def get_default_gateway(self):
         gateways = netifaces.gateways()
         if netifaces.AF_INET in gateways['default']:
@@ -18,6 +19,7 @@ class NetworkInfo:
             return f"[GATEWAY] {gateways['default'][netifaces.AF_INET][0]}"  # IPv4 Gateway
         return "[GATEWAY ERROR]"
 
+    # Gets DNS nameservers from resolv.conf
     def get_dns_nameservers(self):
         dns_servers = []
         try:
@@ -35,6 +37,7 @@ class NetworkInfo:
             logging.error("[EXCEPTION] Could not open /etc/resolv.conf")
             return "[ERROR] IOError"
 
+    # Logs system info
     def get_sys_info(self):
         logging.info("\n===SYSTEM/NETWORK INFO===")
         logging.info(f"[PLATFORM] {platform.platform()}")

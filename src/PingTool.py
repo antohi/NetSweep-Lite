@@ -36,7 +36,7 @@ class PingTool:
             logging.error(f"[EXCEPTION]: {e}" )
             return f"[ERROR] {ip} is DOWN"
 
-    #concurrently pings all IP addresses
+    # Concurrently pings all IP addresses
     def ping_addresses(self, addresses):
         # using ThreadPoolExecutor for parallel pinging
         logging.info(f"===IP PING INFO===")
@@ -47,7 +47,7 @@ class PingTool:
         for result in results:
             print(result)
 
-
+    # Pings addresses in a range of IPs
     def ping_addresses_in_range(self, start, end):
         logging.info(f"===RANGE PING INFO===")
         # Converting to IPv4 Objects to easier iteration in for loop
@@ -60,6 +60,7 @@ class PingTool:
             range_addresses.add((str(ipaddress.IPv4Address(ip))))
         self.ping_addresses(range_addresses)
 
+    # Extracts latency and packet information
     def get_detailed_info(self, p, ip):
         # Latency info
         logging.info(f"=LATENCY, PACKET LOSS, PING STATUS INFO=")

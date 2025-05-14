@@ -17,6 +17,7 @@ rs = RiskScanner()
 logging.basicConfig(filename="net_log.txt", level=logging.INFO)
 logging.info(datetime.now())
 
+# Ping Tool Menu options
 def ping_menu():
     # [IP PING TOOL]
     print("\n[IP PING TOOL]"
@@ -24,6 +25,7 @@ def ping_menu():
           "\n2) Ping Range of IPs")
     return input("> ").strip()
 
+# Runs different ping tools based on option selected
 def run_ping_tool():
     choice = ping_menu()
     # Choice 1 of Ping Tool
@@ -60,6 +62,7 @@ def run_ping_tool():
     else:
         print("[ERROR] Invalid choice in Ping Tool.")
 
+# Port scan menu options
 def port_menu():
     # [PORT SCANNER]
     print("\n[PORT SCANNER]"
@@ -68,6 +71,7 @@ def port_menu():
           "\n3) Deep Scan (Top 25 Ports)")
     return input("> ").strip()
 
+# Runs different types of port scans based on option
 def run_port_scanner():
     choice = port_menu()
     if choice == "1":
@@ -90,6 +94,7 @@ def run_port_scanner():
     else:
         print("[ERROR] Invalid choice in Port Scanner.")
 
+# Logs system info at the time of usage
 def log_system_info():
     # --SYS/NET INFO LOGGING--
     print("\n--SYS/NET INFO LOGGING--")
@@ -98,6 +103,7 @@ def log_system_info():
     ni.get_sys_info()
     print(info)
 
+# Initiates services risk scan to find any CVEs
 def run_service_risk_scan():
     # --SERVICE RISK SCAN--
     print("\n--SERVICE RISK SCAN--")
@@ -107,24 +113,19 @@ def run_service_risk_scan():
     print("\nDetecting risk in services (this may take a few minutes)...")
     rs.scan_banners(ip)
 
-def last_scan_results():
-    if not rs.scan_banners():
-        print("\n[!] No scan history found")
-    return rs.get_scan_history()
-
-
+# Main menu
 def main_menu():
     print("\n==========================="
-          "\n[NetSweep Lite]"
+          "\n     [NetSweep Lite]"
           "\n===========================")
     print("\n[MENU]"
           "\n1) Diagnostics (Ping / Port Scanner)"
           "\n2) System / Network Info"
           "\n3) Service Risk Scan"
-          "\n4) Scan History"
-          "\n5) Quit")
+          "\n4) Quit")
     return input("> ").strip()
 
+# UI loop
 def main_loop():
     exit = False
     while not exit:
@@ -143,9 +144,6 @@ def main_loop():
         elif choice == "3":
             run_service_risk_scan()
         elif choice == "4":
-            print("--SCAN HISTORY--")
-            last_scan_results()
-        elif choice == "5":
             exit = True
             print("\nThank you for using NetworkChecker. Have a great day!")
         else:

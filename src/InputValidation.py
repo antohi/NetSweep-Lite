@@ -3,6 +3,7 @@ import ipaddress
 
 class InputValidation:
 
+    # Validates IP before continuing process
     @staticmethod
     def validate_ip(ip):
         try:

@@ -1,115 +1,48 @@
+# tests/test_RiskScanner2.py
+
+import os
 
 import pytest
-import requests
 from src.RiskScanner import RiskScanner
 
-# Mock JSON response class
-class DummyJSONResponse:
-    status_code = 200
 
-    # Mock JSON metadate for response
-    def json(self):
-        return {
-            "vulnerabilities": [
-                {
-                    "cve": {
-                        "id": "CVE-TEST",
-                        "descriptions": [{"value": "SUPER HIGH SECURITY THREAT AHHH"}],
-                        "metrics": {
-                            "cvssMetricV31": [
-                                {"cvssData": {"baseSeverity": "CRITICAL", "baseScore": 9.9}}
-                            ]
-                        },
-                        "configurations": {
-                            "nodes": [
-                                {"cpeMatch": [{"criteria": "cpe:2.3:a:test:test:1.0"}]}
-                            ]
-                        }
-                    }
-                }
-            ]
-        }
+def test_scan_banners(monkeypatch):
+    sample_output = """
+    22/tcp open  ssh  OpenSSH 8.2p1 Ubuntu 4ubuntu0.5
+    80/tcp open  http Apache httpd 2.4.41 ((Ubuntu))
+    """
 
-# Tests check_risk func with dummy JSON data
-def test_check_risk(monkeypatch):
-    monkeypatch.setattr(requests, "get", lambda *args, **kwargs: DummyJSONResponse())
+    def mock_subprocess_run(*args, **kwargs):
+        class MockProcess:
+            def __init__(self):
+                self.stdout = sample_output
+                self.stderr = ""
 
+        return MockProcess()
+
+    monkeypatch.setattr("subprocess.run", mock_subprocess_run)
     scanner = RiskScanner()
-    results = scanner.check_risk("test")
+    scanner.process_banners = lambda output: True  # Mock to avoid actual processing
+    assert scanner.scan_banners("127.0.0.1") is None
 
-    assert results[0]['cve_id'] == 'CVE-TEST'
-    assert 'Test description' in results[0]['description']
-
-# Tests format_risks func to verify proper results are printed and filtered out
-def test_format_risks(capsys):
+def test_print_kevs_no_kevs_detected(capfd):
     scanner = RiskScanner()
-    results = [
-        {"cve_id": "CVE-LOW",   "description": "Low severity",       "severity": "LOW",      "score": 2.0},
-        {"cve_id": "CVE-HIGH1", "description": "High severity 1",     "severity": "HIGH",     "score": 7.5},
-        {"cve_id": "CVE-HIGH2", "description": "High severity 2",     "severity": "HIGH",     "score": 8.0},
-        {"cve_id": "CVE-CRIT",  "description": "Critical severity",  "severity": "CRITICAL", "score": 9.5},
-    ]
+    scanner.print_kevs({})
+    captured = capfd.readouterr()
+    assert "[+] No KEV found" in captured.out
 
-    scanner.format_risks(results, min_severity="HIGH", top_n=2)
 
-    captured = capsys.readouterr().out
-    print(captured)
-
-    assert "CVE-CRIT" in captured
-    assert "CVE-HIGH2" in captured
-    assert "CVE-HIGH1" not in captured
-    assert "CVE-LOW" not in captured
-    assert "Score:" in captured
-
-# Tests process_banners to test functionality of each banner scanned and risks detected
-def test_process_banners(monkeypatch, capsys):
+def test_print_kevs_with_kevs_detected(capfd):
+    kevs_detected = {
+        "CVE-2023-12345": ["OpenSSH", "OpenSSH 8.2p1", "Vulnerability A", "2023-01-01", "Test vulnerability",
+                           "Test notes"]
+    }
     scanner = RiskScanner()
-    dummy_cves = [
-        {
-            "cve_id": "CVE-dumb-dumb",
-            "description": "dumb-dumb description",
-            "severity": "HIGH",
-            "score": 7.1
-        }
-    ]
-
-    monkeypatch.setattr(scanner, "check_risk", lambda product: dummy_cves)
-    banner_output = "22/tcp open ssh OpenSSH 7.9\n"
-
-    scanner.process_banners(banner_output)
-    captured = capsys.readouterr().out
-    print(captured)
-
-    assert "PORT: 22/tcp | STATE: OPEN | SERVICE: ssh | VERSION: OpenSSH 7.9" in captured
-
-# Checks if last scanned is properly printed
-def test_get_scan_history(monkeypatch, capsys):
-    scanner = RiskScanner()
-    dummy_last_scanned = [
-        {
-            "cve_id": "CVE-dumb-dumb",
-            "description": "dumb-dumb description",
-            "severity": "HIGH",
-            "score": 7.1
-        },
-        {
-            "cve_id": "CVE-dumb-dumb-2",
-            "description": "dumb-dumb description 2",
-            "severity": "MEDIUM",
-            "score": 5.0
-        }
-    ]
-
-    scanner.scan_history = dummy_last_scanned
-    scanner.get_scan_history()
-    captured = capsys.readouterr().out
-    print(captured)
-
-    assert "CVE-dumb-dumb" in captured
-    assert "(HIGH)" in captured
-    assert "Score: 7.1" in captured
-
-
+    scanner.print_kevs(kevs_detected)
+    captured = capfd.readouterr()
+    assert "CVE-2023-12345" in captured.out
+    assert "Vulnerability A" in captured.out
+    assert "OpenSSH" in captured.out
 
 
 

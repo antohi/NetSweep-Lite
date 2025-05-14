@@ -1,0 +1,11 @@
+INFO:root:2025-05-13 20:18:25.924193
+INFO:root:2025-05-13 20:27:46.788744
+INFO:root:===RANGE PING INFO===
+INFO:root:===IP PING INFO===
+INFO:root:=LATENCY, PACKET LOSS, PING STATUS INFO=
+INFO:root:8.8.8.8 [LATENCY] Minimum: 4.468, Average: 6.777, Maximum: 10.608
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
+WARNING:root:[FAIL]: Ping to 8.8.8.10 was unsuccessful. Return code: 2
+WARNING:root:[FAIL]: Ping to 8.8.8.9 was unsuccessful. Return code: 2
+WARNING:root:[FAIL]: Ping to 8.8.8.7 was unsuccessful. Return code: 2
