@@ -1,77 +1,46 @@
-# NetworkChecker 🛠️🌐
+# 🧹 NetSweep Lite
 
-**NetworkChecker** is a Python-based network diagnostics and cybersecurity tool I've been building while studying for my A+ and Net+ exams. It allows users to:
+> A modular Python-based network diagnostic and vulnerability triage toolkit for IT, GRC, and Security usage. Built while studying for A+ and ISC2 CC.
 
-- Ping individual or ranges of IP addresses
-- Perform quick, targeted, or deep port scans using Nmap
-- Log detailed system, network, and scan information
-- View and log scan results with clean formatting
-- Leverage concurrency for fast batch scanning
+---
+
+## ⚡ What is NetSweep Lite?
+
+`NetSweep Lite` is a lightweight CLI tool designed to simplify core network diagnostics and assist in vulnerability detection using **Known Exploited Vulnerabilities (KEV)** data from CISA. Built for speed and clarity, it helps you:
+
+- 🔍 Scan IPs and ports quickly with Nmap integration  
+- 📶 Diagnose network connectivity with parallelized IP pinging  
+- 📋 Log system/network stats for documentation or audits  
+- 🛡️ Identify risks tied to services using a local KEV CSV database  
 
 ---
 
 ## Features
 
-- ✅ IP Ping Tool with Range Support
-- ✅ Port Scanner with Single & Top-Port Modes
-- ✅ Local System & Network Info Logging
-- ✅ Threaded Concurrent Scanning
-- ✅ Regex-based Output Formatting
-- ✅ Scan Result Logging (to `net_log.txt`)
-- ✅ IP Validation
+| Feature                  | Description                                                                 |
+|--------------------------|-----------------------------------------------------------------------------|
+| 🚀 Concurrent Ping Tool   | Supports single, multiple, or ranged IP pings — fast and logged             |
+| 🔍 Nmap Port Scanning     | Quick or deep port scans with friendly, color-coded output                 |
+| 🛡️ KEV Matching Engine    | Maps services from Nmap to CISA's KEV CSV (offline database)               |
+| 🖥️ System/Network Logger  | Pulls local IP, DNS servers, gateway, OS and CPU info                      |
+| 📁 Export Support         | Logs all found KEVs to `kev_log.csv` with timestamps                       |
+| 🎨 Colorama UI            | Clear CLI interface with colored warnings, errors, and results             |
 
 ---
 
-## Tech Used
-- **Networking Tool:** Nmap (via subprocess)
-- **Modules:**
-  - `subprocess`, `platform`, `os`, `socket`, `re`, `ipaddress`
-  - `datetime`, `concurrent.futures`, `logging`
-- **Validation:** Custom IP validation using Python’s built-in `ipaddress` module
-- **Multithreading:** Handled with `ThreadPoolExecutor`
-- **CLI Interface:** Interactive UI with menus
+## Screenshots
+![Main Menu](assets/screenshots/mm.png)
+![Single/Multiple IP Scan](assets/screenshots/sm_invip.png)
+![Single/Multiple IP Results](assets/screenshots/sm_res.png)
+![Range Ping Scan](assets/screenshots/RPT.png)
+![System Network Info](assets/screenshots/sn_info.png)
+![Single Port Scan](assets/screenshots/sp_scan.png)
+![Quick Port Scan](assets/screenshots/qp_scan.png)
+![Service Risk Scan](assets/screenshots/sr_scan.png)
+![Service Risk Scan 2](assets/screenshots/sr_scan2.png)
 
-# Tutorial
 
-Clone this repo to your local machine:
-`git clone https://github.com/antohi/NetworkChecker.git`
 
-Install the required Python dependencies:
-`pip install -r requirements.txt`
 
-Run the Program
-`python network_checker.py`
 
----
-
-# Screenshots (CML UI Output)
-## Main Menu:
-![Main Menu](assets/screenshots/main_menu_cml.png)
-
-## Single/Multiple IP Pings:
-![Scan Results](assets/screenshots/single_multiple_ping_cml.png)
-
-## Range IP Pings:
-![Scan Results](assets/screenshots/range_ping_cml.png)
-
-## Quick Port Scan (Top 10 Ports in IP):
-![Scan Results](assets/screenshots/quick_port_scan_cml.png)
-
-## Deep Scan (Top 25 Ports in IP):
-![Scan Results](assets/screenshots/deep_port_scan_cml.png)
-
----
-
-# Screenshots (net_log.txt Output)
-## Ping Tool Output (w/ System and Network Info Logging):
-![Terminal View](assets/screenshots/Net_Log_Output_Pings.png)
-
-## Output for Port Scanner:
-![Terminal View](assets/screenshots/portscanner_netlog.png)
-
----
-
-# Future ideas: 
-- Scan multiple ports and filter by opened
-- Traceroute
 
