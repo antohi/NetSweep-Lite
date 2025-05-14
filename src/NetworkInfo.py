@@ -3,6 +3,7 @@ import netifaces
 import logging
 import platform
 import os
+from colorama import Fore, Style, init
 
 class NetworkInfo:
     # Retrieves Local IP using socket

@@ -4,6 +4,8 @@ import logging
 import concurrent.futures
 import re
 import ipaddress
+from colorama import Fore, Style, init
+
 
 class PingTool:
     def __init__(self):
@@ -25,21 +27,21 @@ class PingTool:
             p = subprocess.run(ping_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
             if p.returncode == 0:
                 self.get_detailed_info(str(p), ip)
-                logging.info(f"[SUCCESS]: Ping to {ip} was successful")
+                logging.info(f"{Fore.GREEN}[SUCCESS]:{Style.RESET_ALL} Ping to {ip} was successful")
  #               playsound('/assets/ding.mp3')
                 return  f"{ip} is UP"
             else:
-                logging.warning(f"[FAIL]: Ping to {ip} was unsuccessful. Return code: {p.returncode}")
+                logging.warning(f"{Fore.RED}[FAIL]: Ping to {ip} was unsuccessful. Return code: {p.returncode}{Style.RESET_ALL}")
 #               playsound('/assets/error.mp3')
-                return f"{ip} is DOWN"
+                return f"{ip} is {Fore.LIGHTRED_EX}DOWN{Style.RESET_ALL}"
         except Exception as e:
             logging.error(f"[EXCEPTION]: {e}" )
-            return f"[ERROR] {ip} is DOWN"
+            return f"{Fore.RED}[ERROR]{Style.RESET_ALL} {ip} is {Fore.LIGHTRED_EX}DOWN{Style.RESET_ALL}"
 
     # Concurrently pings all IP addresses
     def ping_addresses(self, addresses):
         # using ThreadPoolExecutor for parallel pinging
-        logging.info(f"===IP PING INFO===")
+        logging.info(f"{Fore.GREEN}===IP PING INFO==={Style.RESET_ALL}")
         with concurrent.futures.ThreadPoolExecutor() as executor:
             results = executor.map(self.ping_ip, addresses)  # Executes ping_ip for each address in parallel
 
@@ -49,7 +51,7 @@ class PingTool:
 
     # Pings addresses in a range of IPs
     def ping_addresses_in_range(self, start, end):
-        logging.info(f"===RANGE PING INFO===")
+        logging.info(f"{Fore.GREEN}===RANGE PING INFO==={Style.RESET_ALL}")
         # Converting to IPv4 Objects to easier iteration in for loop
         range_addresses = set([])
         start_ip = ipaddress.IPv4Address(start)
@@ -63,7 +65,7 @@ class PingTool:
     # Extracts latency and packet information
     def get_detailed_info(self, p, ip):
         # Latency info
-        logging.info(f"=LATENCY, PACKET LOSS, PING STATUS INFO=")
+        logging.info(f"{Fore.GREEN}=LATENCY, PACKET LOSS, PING STATUS INFO={Style.RESET_ALL}")
         latency_info = re.search(r"(\d+\.\d+)/(\d+\.\d+)/(\d+\.\d+)", p)
         min, avg, max = latency_info.groups()
         logging.info(f"{ip} [LATENCY] Minimum: {min}, Average: {avg}, Maximum: {max}")

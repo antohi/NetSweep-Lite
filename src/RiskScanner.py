@@ -6,7 +6,7 @@ import subprocess
 import os
 from dotenv import load_dotenv
 import datetime
-
+from colorama import Fore, Style, init
 
 class RiskScanner:
     def __init__(self):
@@ -32,7 +32,7 @@ class RiskScanner:
             ["nmap", "-sV", host],
             stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
         )
-        print("\n\n=== SERVICE RISK SCAN ===")
+        print(f"\n\n{Fore.MAGENTA}===SERVICE RISK SCAN==={Style.RESET_ALL}")
         self.process_banners(scan.stdout) # Formats banner scan results to extract
 
     # Extracts detailed banner info in order to check if any KEVs match
@@ -52,7 +52,7 @@ class RiskScanner:
                     self.print_kevs(kevs)
                     self.log_kevs(kevs)
                 else:
-                    print("[+] No KEV found")
+                    print(f"{Fore.GREEN}[+] No KEV found{Style.RESET_ALL}")
             else:
                 print(kevs)  # This prints the error message string
             print("=" * 60)
@@ -71,7 +71,7 @@ class RiskScanner:
                         continue
                 return kevs_detected
         except FileNotFoundError as e:
-            return f"[!] ERROR READING CISA KEVs: {e}"
+            return f"{Fore.LIGHTRED_EX}[!] ERROR READING CISA KEVs: {e}{Style.RESET_ALL}"
 
     # Prints found KEVs for console UI
     def print_kevs(self, kevs_detected):
@@ -79,7 +79,7 @@ class RiskScanner:
             print("[+] No KEV found")
         else:
             for kev in kevs_detected:
-                print(f"[!!] {kev} – {kevs_detected[kev][2]}")
+                print(f"{Fore.LIGHTRED_EX}[!!]{Style.RESET_ALL} {kev} – {kevs_detected[kev][2]}")
                 print(f"     Description: {kevs_detected[kev][4]}")
                 print(f"     Vendor: {kevs_detected[kev][0]}, Product: {kevs_detected[kev][1]}")
                 print(f"     Added: {kevs_detected[kev][3]}\n")
@@ -99,7 +99,7 @@ class RiskScanner:
                         f"{kevs_detected[kev][3]}, {datetime.datetime.now()}\n"
                     )
         except Exception as e:
-            logging.error(f"[!] ERROR: Unable to write report CSV file. Exception: {e}")
+            logging.error(f"{Fore.LIGHTRED_EX}[!] ERROR: Unable to write report CSV file. Exception: {e}{Style.RESET_ALL}")
 
 
 

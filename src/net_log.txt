@@ -9,3 +9,65 @@ INFO:root:[SUCCESS]: Ping to 8.8.8.8 was successful
 WARNING:root:[FAIL]: Ping to 8.8.8.10 was unsuccessful. Return code: 2
 WARNING:root:[FAIL]: Ping to 8.8.8.9 was unsuccessful. Return code: 2
 WARNING:root:[FAIL]: Ping to 8.8.8.7 was unsuccessful. Return code: 2
+INFO:root:2025-05-13 20:33:42.783894
+INFO:root:2025-05-13 20:34:26.316389
+INFO:root:2025-05-13 20:35:13.244652
+INFO:root:2025-05-13 20:35:55.312175
+INFO:root:2025-05-13 20:44:27.735209
+INFO:root:[LOCAL IP] 10.74.200.80
+INFO:root:[GATEWAY] 10.74.192.1
+INFO:root:[DNS SERVERS] 172.28.97.26, 172.28.132.114
+INFO:root:
+===SYSTEM/NETWORK INFO===
+INFO:root:[PLATFORM] macOS-14.6-arm64-arm-64bit
+INFO:root:[CPU] arm64
+INFO:root:[USER] root
+INFO:root:2025-05-13 20:44:57.695678
+INFO:root:2025-05-13 20:46:17.858792
+INFO:root:2025-05-13 22:15:56.856372
+INFO:root:[32m===IP PING INFO===[0m
+INFO:root:[32m=LATENCY, PACKET LOSS, PING STATUS INFO=[0m
+INFO:root:8.8.8.8 [LATENCY] Minimum: 36.924, Average: 45.347, Maximum: 53.148
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[32m[SUCCESS]:[0m Ping to 8.8.8.8 was successful
+INFO:root:[32m=LATENCY, PACKET LOSS, PING STATUS INFO=[0m
+INFO:root:1.1.1.1 [LATENCY] Minimum: 48.428, Average: 50.811, Maximum: 53.192
+INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[32m[SUCCESS]:[0m Ping to 1.1.1.1 was successful
+INFO:root:[LOCAL IP] 192.168.12.59
+INFO:root:[GATEWAY] 192.168.12.1
+INFO:root:[DNS SERVERS] 192.168.12.1, fdc6:67dd:af11::1
+INFO:root:
+===SYSTEM/NETWORK INFO===
+INFO:root:[PLATFORM] macOS-14.6-arm64-arm-64bit
+INFO:root:[CPU] arm64
+INFO:root:[USER] root
+INFO:root:2025-05-13 22:18:03.335653
+INFO:root:2025-05-13 22:18:22.596343
+INFO:root:2025-05-13 22:19:58.057991
+INFO:root:2025-05-13 22:21:41.301111
+INFO:root:2025-05-13 22:22:05.292698
+INFO:root:2025-05-13 22:22:23.346425
+INFO:root:[LOCAL IP] 192.168.12.59
+INFO:root:[GATEWAY] 192.168.12.1
+INFO:root:[DNS SERVERS] 192.168.12.1, fdc6:67dd:af11::1
+INFO:root:
+===SYSTEM/NETWORK INFO===
+INFO:root:[PLATFORM] macOS-14.6-arm64-arm-64bit
+INFO:root:[CPU] arm64
+INFO:root:[USER] root
+INFO:root:2025-05-13 22:22:30.896098
+INFO:root:2025-05-13 22:22:40.155881
+INFO:root:2025-05-13 22:25:11.414655
+INFO:root:2025-05-13 22:25:33.987724
+INFO:root:2025-05-13 22:26:38.994042
+INFO:root:2025-05-13 22:26:43.600969
+INFO:root:[LOCAL IP] 192.168.12.59
+INFO:root:[GATEWAY] 192.168.12.1
+INFO:root:[DNS SERVERS] 192.168.12.1, fdc6:67dd:af11::1
+INFO:root:
+===SYSTEM/NETWORK INFO===
+INFO:root:[PLATFORM] macOS-14.6-arm64-arm-64bit
+INFO:root:[CPU] arm64
+INFO:root:[USER] root
+INFO:root:2025-05-13 22:26:49.092452

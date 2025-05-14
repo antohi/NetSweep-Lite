@@ -2,6 +2,8 @@ import re
 import subprocess
 import logging
 import RiskScanner
+from colorama import Fore, Style, init
+
 
 
 
@@ -12,7 +14,7 @@ class PortScanner:
         scan_cmd = ["nmap", "-p", port, host]
         s = subprocess.run(scan_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         logging.info("\n\n===SINGLE SCAN RESULTS===")
-        print("\n\n===SINGLE SCAN RESULTS===")
+        print(f"\n\n{Fore.LIGHTCYAN_EX}===SINGLE SCAN RESULTS==={Style.RESET_ALL}")
         return self.format_port_scan(s.stdout)
 
     # Formats output of scan to make more readable when printing/logging
@@ -27,8 +29,8 @@ class PortScanner:
     def quick_scan(self, host):
         scan_cmd = ["nmap", "--top-ports", "10", host]
         s = subprocess.run(scan_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        logging.info("\n\n===QUICK SCAN RESULTS===")
-        print("\n\n===QUICK SCAN RESULTS===")
+        logging.info(f"\n\n===QUICK SCAN RESULTS===")
+        print(f"\n\n{Fore.LIGHTCYAN_EX}===QUICK SCAN RESULTS==={Style.RESET_ALL}")
         return self.format_port_scan(s.stdout)
 
     # Scans top 25 ports using nmap's --top-ports functionality
@@ -36,7 +38,7 @@ class PortScanner:
         scan_cmod = ["nmap", "--top-ports", "25", host]
         s = subprocess.run(scan_cmod, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         logging.info("\n\n===DEEP SCAN RESULTS===")
-        print("\n\n===DEEP SCAN RESULTS===")
+        print(f"\n\n{Fore.LIGHTCYAN_EX}===DEEP SCAN RESULTS==={Style.RESET_ALL}")
         return self.format_port_scan(s.stdout)
 
 
