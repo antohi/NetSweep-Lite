@@ -53,7 +53,7 @@ def run_ping_tool():
     # Choice 2 of Ping Tool
     elif choice == "2":
         print(f"\n{Fore.GREEN}--RANGE PING TOOL--{Style.RESET_ALL}")
-        start = input("> ").strip()
+        start = input("START IP: ").strip()
         while not InputValidation.validate_ip(start):
             start = input(f"{Fore.RED}[INVALID IP] Enter START IP again: {Style.RESET_ALL}").strip()
         end = input("END IP: ").strip()
@@ -112,7 +112,7 @@ def log_system_info():
 def run_service_risk_scan():
     # --SERVICE RISK SCAN--
     print(f"{Fore.MAGENTA}\n--SERVICE RISK SCAN--{Style.RESET_ALL}")
-    ip = input("\nIP address: ").strip()
+    ip = input("IP address: ").strip()
     while not InputValidation.validate_ip(ip):
         ip = input(f"{Fore.RED}[INVALID IP] Enter a valid IP: {Style.RESET_ALL}").strip()
     print("\nDetecting risk in services (this may take a few minutes)...")

@@ -71,3 +71,69 @@ INFO:root:[PLATFORM] macOS-14.6-arm64-arm-64bit
 INFO:root:[CPU] arm64
 INFO:root:[USER] root
 INFO:root:2025-05-13 22:26:49.092452
+INFO:root:2025-05-13 22:29:30.241511
+INFO:root:[32m===IP PING INFO===[0m
+INFO:root:[32m=LATENCY, PACKET LOSS, PING STATUS INFO=[0m
+INFO:root:8.8.8.8 [LATENCY] Minimum: 30.061, Average: 35.343, Maximum: 38.255
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[32m[SUCCESS]:[0m Ping to 8.8.8.8 was successful
+INFO:root:[32m=LATENCY, PACKET LOSS, PING STATUS INFO=[0m
+INFO:root:1.1.1.1 [LATENCY] Minimum: 32.545, Average: 38.141, Maximum: 43.557
+INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[32m[SUCCESS]:[0m Ping to 1.1.1.1 was successful
+INFO:root:2025-05-13 22:32:54.647192
+INFO:root:[32m===IP PING INFO===[0m
+INFO:root:[32m=LATENCY, PACKET LOSS, PING STATUS INFO=[0m
+INFO:root:[32m=LATENCY, PACKET LOSS, PING STATUS INFO=[0m
+INFO:root:1.1.1.1 [LATENCY] Minimum: 36.149, Average: 43.714, Maximum: 50.807
+INFO:root:8.8.8.8 [LATENCY] Minimum: 36.279, Average: 44.388, Maximum: 52.800
+INFO:root:1.1.1.1: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[32m[SUCCESS]:[0m Ping to 1.1.1.1 was successful
+INFO:root:[32m[SUCCESS]:[0m Ping to 8.8.8.8 was successful
+INFO:root:[32m===RANGE PING INFO===[0m
+INFO:root:[32m===IP PING INFO===[0m
+INFO:root:[32m=LATENCY, PACKET LOSS, PING STATUS INFO=[0m
+INFO:root:8.8.8.8 [LATENCY] Minimum: 29.087, Average: 41.656, Maximum: 53.814
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[32m[SUCCESS]:[0m Ping to 8.8.8.8 was successful
+WARNING:root:[31m[FAIL]: Ping to 8.8.8.10 was unsuccessful. Return code: 2[0m
+WARNING:root:[31m[FAIL]: Ping to 8.8.8.7 was unsuccessful. Return code: 2[0m
+WARNING:root:[31m[FAIL]: Ping to 8.8.8.9 was unsuccessful. Return code: 2[0m
+INFO:root:2025-05-13 22:34:34.151840
+INFO:root:[32m===RANGE PING INFO===[0m
+INFO:root:[32m===IP PING INFO===[0m
+INFO:root:[32m=LATENCY, PACKET LOSS, PING STATUS INFO=[0m
+INFO:root:8.8.8.8 [LATENCY] Minimum: 33.039, Average: 38.398, Maximum: 49.028
+INFO:root:8.8.8.8: [PACKETS] Transmitted: 4, Received: 4, Lost: 0.0%
+INFO:root:[32m[SUCCESS]:[0m Ping to 8.8.8.8 was successful
+WARNING:root:[31m[FAIL]: Ping to 8.8.8.9 was unsuccessful. Return code: 2[0m
+WARNING:root:[31m[FAIL]: Ping to 8.8.8.7 was unsuccessful. Return code: 2[0m
+WARNING:root:[31m[FAIL]: Ping to 8.8.8.10 was unsuccessful. Return code: 2[0m
+INFO:root:2025-05-13 22:35:31.018744
+INFO:root:[LOCAL IP] 192.168.12.59
+INFO:root:[GATEWAY] 192.168.12.1
+INFO:root:[DNS SERVERS] 192.168.12.1, fdc6:67dd:af11::1
+INFO:root:
+===SYSTEM/NETWORK INFO===
+INFO:root:[PLATFORM] macOS-14.6-arm64-arm-64bit
+INFO:root:[CPU] arm64
+INFO:root:[USER] root
+INFO:root:
+
+===SINGLE SCAN RESULTS===
+INFO:root:PORT: 80/tcp | STATE: FILTERED | SERVICE: (http)
+INFO:root:
+
+===QUICK SCAN RESULTS===
+INFO:root:PORT: 21/tcp | STATE: FILTERED | SERVICE: (ftp)
+INFO:root:PORT: 22/tcp | STATE: FILTERED | SERVICE: (ssh)
+INFO:root:PORT: 23/tcp | STATE: FILTERED | SERVICE: (telnet)
+INFO:root:PORT: 25/tcp | STATE: FILTERED | SERVICE: (smtp)
+INFO:root:PORT: 80/tcp | STATE: OPEN | SERVICE: (http)
+INFO:root:PORT: 110/tcp | STATE: FILTERED | SERVICE: (pop3)
+INFO:root:PORT: 139/tcp | STATE: FILTERED | SERVICE: (netbios-ssn)
+INFO:root:PORT: 443/tcp | STATE: OPEN | SERVICE: (https)
+INFO:root:PORT: 445/tcp | STATE: FILTERED | SERVICE: (microsoft-ds)
+INFO:root:PORT: 3389/tcp | STATE: FILTERED | SERVICE: (ms-wbt-server)
+INFO:root:2025-05-13 22:38:30.541122

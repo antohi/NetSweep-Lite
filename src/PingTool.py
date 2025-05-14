@@ -29,7 +29,7 @@ class PingTool:
                 self.get_detailed_info(str(p), ip)
                 logging.info(f"{Fore.GREEN}[SUCCESS]:{Style.RESET_ALL} Ping to {ip} was successful")
  #               playsound('/assets/ding.mp3')
-                return  f"{ip} is UP"
+                return  f"{ip} is {Fore.GREEN}UP{Style.RESET_ALL}"
             else:
                 logging.warning(f"{Fore.RED}[FAIL]: Ping to {ip} was unsuccessful. Return code: {p.returncode}{Style.RESET_ALL}")
 #               playsound('/assets/error.mp3')
